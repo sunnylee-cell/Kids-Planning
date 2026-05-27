@@ -31,50 +31,59 @@
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
 
     <!-- CSS -->
-    <style>
+       <style>
         body {
             font-family: 'Plus Jakarta Sans', 'Noto Sans TC', sans-serif;
-            background-color: #f8fafc;
+            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 50%, #e2e8f0 100%);
         }
-
         /* 隱藏滾動條但保持功能 */
         .no-scrollbar::-webkit-scrollbar {
             display: none;
         }
-
         .no-scrollbar {
             -ms-overflow-style: none;
             scrollbar-width: none;
         }
+        /* 微光特效 */
+        .glass-glow-indigo {
+            box-shadow: 0 10px 30px -5px rgba(99, 102, 241, 0.1);
+        }
+        .glass-glow-emerald {
+            box-shadow: 0 10px 30px -5px rgba(16, 185, 129, 0.1);
+        }
     </style>
 </head>
-<body class="text-slate-800 antialiased min-h-screen flex flex-col">
+<body class="text-slate-800 antialiased min-h-screen flex flex-col relative overflow-x-hidden">
 
-    <!-- 頂部導航欄（已移除左上角標題） -->
+    <!-- 柔和背景微光裝飾 -->
+    <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-indigo-200/20 rounded-full blur-[120px] pointer-events-none -z-10"></div>
+    <div class="absolute top-[600px] left-[-200px] w-[500px] h-[500px] bg-emerald-200/20 rounded-full blur-[120px] pointer-events-none -z-10"></div>
+
+    <!-- 頂部導航欄 (左側完全移除標題以符合要求) -->
     <header class="border-b border-slate-100 bg-white/80 backdrop-blur-md sticky top-0 z-50">
         <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
-            <!-- 左側留空以符合需求 -->
+            <!-- 左側留空 -->
             <div></div>
-            <div class="flex items-center space-x-4">
+            <div class="flex items-center space-x-3">
                 <span class="text-xs text-slate-400 font-medium">適用對象：已設籍雙重國籍家庭</span>
-                <span class="text-xs font-semibold text-indigo-600 bg-indigo-50 px-2.5 py-1 rounded-full">2026 法律最新版</span>
+                <span class="text-xs font-semibold text-indigo-600 bg-indigo-50 px-2.5 py-1 rounded-full border border-indigo-100 animate-pulse">2026 法律最新版</span>
             </div>
         </div>
     </header>
 
     <!-- 主要內容區 -->
-    <main class="max-w-5xl mx-auto px-4 sm:px-6 py-8 space-y-10 flex-grow w-full">
+    <main class="max-w-5xl mx-auto px-4 sm:px-6 py-8 space-y-10 flex-grow w-full relative">
         
         <!-- 核心現況與核心公式 -->
         <section class="grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch">
-            <div class="md:col-span-2 bg-white border border-slate-100 rounded-3xl p-6 sm:p-8 shadow-sm flex flex-col justify-between space-y-6">
+            <div class="md:col-span-2 bg-white border border-slate-100 rounded-3xl p-6 sm:p-8 shadow-sm flex flex-col justify-between space-y-6 hover:shadow-md transition-shadow duration-300">
                 <div class="space-y-4">
-                    <span class="text-xs font-semibold text-indigo-600 uppercase tracking-widest bg-indigo-50 px-2.5 py-1 rounded-full inline-block">核心現況與最大風險</span>
+                    <span class="text-xs font-semibold text-indigo-600 uppercase tracking-widest bg-indigo-50 px-3 py-1 rounded-full inline-block border border-indigo-100">核心現況與最大風險</span>
                     <h1 class="text-2xl md:text-3xl font-bold tracking-tight text-slate-950 leading-tight">
                         目前最大的風險，不是美國籍。<br>
                         <span class="text-indigo-600">而是目前長期在台就學。</span>
                     </h1>
-                    <p class="text-slate-600 text-sm leading-relaxed border-l-4 border-indigo-500 pl-4 bg-slate-50/50 py-3 pr-3 rounded-r-xl">
+                    <p class="text-slate-600 text-sm leading-relaxed border-l-4 border-indigo-500 pl-4 bg-slate-50/50 py-3 pr-3 rounded-r-2xl">
                         台灣役政機關審查的核心是<strong>「生活重心是否在台灣」</strong>。如目前孩子就讀 <strong>TAS、TES等國際學校</strong>，在法律上屬於在台生活與就學階段。必須透過<strong>「國三（15歲）12月31日前出國」</strong>來扭轉此狀態，建立實質的海外居住事實，否則一旦進入「接近役齡」將面臨出境管制限制。
                     </p>
                 </div>
@@ -89,7 +98,8 @@
                     </div>
                 </div>
             </div>
-            <div class="bg-gradient-to-br from-slate-900 to-indigo-950 text-white rounded-3xl p-6 sm:p-8 flex flex-col justify-between border border-slate-800 shadow-md">
+            <div class="bg-gradient-to-br from-slate-900 via-slate-950 to-indigo-950 text-white rounded-3xl p-6 sm:p-8 flex flex-col justify-between border border-slate-800 shadow-xl relative overflow-hidden">
+                <div class="absolute -right-10 -bottom-10 w-40 h-40 bg-indigo-500/10 rounded-full blur-2xl"></div>
                 <div>
                     <span class="text-[10px] uppercase tracking-wider text-indigo-300 font-bold bg-indigo-900/50 px-2.5 py-1 rounded-full inline-block">中華民國兵役核心公式</span>
                     <div class="mt-4 space-y-2">
@@ -102,103 +112,130 @@
                             <span class="text-emerald-400 font-bold">✔ 已具備</span>
                         </div>
                         <div class="w-full border-t border-slate-800 my-2"></div>
-                        <div class="bg-slate-800/50 p-3 rounded-xl border border-slate-700/50 text-center">
-                            <span class="text-xs text-slate-400 block">不論是否持有外國護照</span>
+                        <div class="bg-slate-800/50 p-3 rounded-2xl border border-slate-700/50 text-center">
+                            <span class="text-[10px] text-slate-400 block">不論是否持有外國護照</span>
                             <span class="text-sm font-bold text-rose-400">依法均有服兵役義務</span>
                         </div>
                     </div>
                 </div>
                 <div class="mt-4 text-[11px] text-indigo-200/80 leading-relaxed bg-indigo-900/40 p-3 rounded-xl border border-indigo-800/30">
-                    💡 <strong>家長常見誤區：</strong>「孩子拿美國護照進台灣就安全？」<br>
-                    <strong>正解：</strong>只要在台灣有過戶籍，不論持哪國護照入境，系統皆會與戶政、役政資料連動，達到特定天數或年齡即會被限制出境。
+                    💡 <strong>家長常見誤區：</strong>「孩子拿外國護照進台灣就安全？」<br>
+                    <strong>正解：</strong>只要在台灣有過戶籍，系統皆會與戶政、役政連動，達到特定天數或年齡即會被限制出境。
                 </div>
             </div>
         </section>
 
-        <!-- 分頁切換按鈕 -->
-        <div class="flex border-b border-slate-200 overflow-x-auto no-scrollbar whitespace-nowrap gap-2">
-            <button onclick="switchTab('simulator')" id="btn-tab-simulator" class="tab-btn px-4 sm:px-6 py-3 font-semibold text-sm border-b-2 border-indigo-600 text-indigo-600 transition-all cursor-pointer">
-                在台天數模擬器
-            </button>
-            <button onclick="switchTab('checker')" id="btn-tab-checker" class="tab-btn px-4 sm:px-6 py-3 font-semibold text-sm border-b-2 border-transparent text-slate-500 hover:text-slate-800 transition-all cursor-pointer">
-                專屬風險診斷器
-            </button>
-            <button onclick="switchTab('roadmap')" id="btn-tab-roadmap" class="tab-btn px-4 sm:px-6 py-3 font-semibold text-sm border-b-2 border-transparent text-slate-500 hover:text-slate-800 transition-all cursor-pointer">
-                關鍵時序與申辦指南
-            </button>
-            <button onclick="switchTab('qualifications')" id="btn-tab-qualifications" class="tab-btn px-4 sm:px-6 py-3 font-semibold text-sm border-b-2 border-transparent text-slate-500 hover:text-slate-800 transition-all cursor-pointer flex items-center gap-1.5">
-                <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
-                僑居加簽資格與申辦完整指南
-            </button>
+        <!-- 核心交互：分頁切換按鈕 (手機端改為 2x2 四宮格，桌面端還原) -->
+        <div class="space-y-2">
+            <!-- 手機端提示說明 -->
+            <div class="block md:hidden text-center text-xs text-indigo-500 font-semibold bg-indigo-50 py-1.5 rounded-full border border-indigo-100 animate-pulse">
+                👇 點擊下方區塊，直接切換兵役功能導航 👇
+            </div>
+            
+            <!-- 響應式切換盒 -->
+            <div class="grid grid-cols-2 gap-3 md:flex md:border-b md:border-slate-200 md:gap-2">
+                <!-- Tab 1: 在台天數模擬器 -->
+                <button onclick="switchTab('simulator')" id="btn-tab-simulator" class="tab-btn w-full md:w-auto p-3 md:px-5 md:py-3 rounded-2xl md:rounded-none md:border-b-2 font-bold text-xs sm:text-sm text-indigo-600 bg-white md:bg-transparent border border-indigo-200 md:border-transparent md:border-indigo-600 flex flex-col md:flex-row items-center justify-center gap-2 transition-all duration-300 hover:scale-[1.02] md:hover:scale-100 shadow-sm md:shadow-none cursor-pointer">
+                    <span class="p-1.5 bg-indigo-100 rounded-lg md:bg-transparent text-indigo-600">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                    </span>
+                    <span>在台天數模擬器</span>
+                </button>
+                
+                <!-- Tab 2: 專屬風險診斷器 -->
+                <button onclick="switchTab('checker')" id="btn-tab-checker" class="tab-btn w-full md:w-auto p-3 md:px-5 md:py-3 rounded-2xl md:rounded-none md:border-b-2 font-bold text-xs sm:text-sm text-slate-500 bg-slate-50/50 md:bg-transparent border border-slate-100 md:border-transparent flex flex-col md:flex-row items-center justify-center gap-2 transition-all duration-300 hover:scale-[1.02] md:hover:scale-100 shadow-sm md:shadow-none cursor-pointer">
+                    <span class="p-1.5 bg-slate-100 rounded-lg md:bg-transparent text-slate-400">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path></svg>
+                    </span>
+                    <span>專屬風險診斷器</span>
+                </button>
+                
+                <!-- Tab 3: 關鍵時序與 FAQ -->
+                <button onclick="switchTab('roadmap')" id="btn-tab-roadmap" class="tab-btn w-full md:w-auto p-3 md:px-5 md:py-3 rounded-2xl md:rounded-none md:border-b-2 font-bold text-xs sm:text-sm text-slate-500 bg-slate-50/50 md:bg-transparent border border-slate-100 md:border-transparent flex flex-col md:flex-row items-center justify-center gap-2 transition-all duration-300 hover:scale-[1.02] md:hover:scale-100 shadow-sm md:shadow-none cursor-pointer">
+                    <span class="p-1.5 bg-slate-100 rounded-lg md:bg-transparent text-slate-400">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"></path></svg>
+                    </span>
+                    <span>關鍵時序與申辦</span>
+                </button>
+                
+                <!-- Tab 4: 僑居加簽完整指南 -->
+                <button onclick="switchTab('qualifications')" id="btn-tab-qualifications" class="tab-btn w-full md:w-auto p-3 md:px-5 md:py-3 rounded-2xl md:rounded-none md:border-b-2 font-bold text-xs sm:text-sm text-slate-500 bg-slate-50/50 md:bg-transparent border border-slate-100 md:border-transparent flex flex-col md:flex-row items-center justify-center gap-2 transition-all duration-300 hover:scale-[1.02] md:hover:scale-100 shadow-sm md:shadow-none cursor-pointer">
+                    <span class="p-1.5 bg-emerald-100 rounded-lg md:bg-transparent text-emerald-600">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+                    </span>
+                    <span>僑居加簽自檢指南</span>
+                </button>
+            </div>
         </div>
 
         <!-- 區塊一：在台天數模擬器 -->
         <div id="tab-simulator" class="tab-content space-y-6">
             <div class="flex flex-col space-y-1">
                 <h2 class="text-xl font-bold text-slate-900 flex items-center gap-2">
-                    <svg class="w-5 h-5 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
-                    年度回台天數模擬器 (適用於已取得僑民役男身分者)
+                    ⚡ 年度回台天數模擬器 (適用於已取得僑民役男身分者)
                 </h2>
-                <p class="text-xs text-slate-400">請拖動滑桿，模擬未來孩子「19 歲起（役齡當年 1/1 ～ 12/31）」預計在台灣停留的天數。</p>
+                <p class="text-xs text-slate-400">拖動滑桿，模擬未來孩子「19 歲起（役齡當年 1/1 ～ 12/31）」預計在台灣停留的天數。</p>
             </div>
 
-            <div class="bg-white border border-slate-100 rounded-3xl p-6 sm:p-8 shadow-sm grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="bg-white border border-slate-100 rounded-3xl p-6 sm:p-8 shadow-sm grid grid-cols-1 md:grid-cols-3 gap-8 relative overflow-hidden">
                 <div class="md:col-span-2 space-y-6 flex flex-col justify-between">
                     <div class="space-y-4">
-                        <div class="flex justify-between items-center text-sm font-semibold">
+                        <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 text-sm font-semibold">
                             <span class="text-slate-600">預估年度留台總天數（暑假 + 寒假 + 短期回台）</span>
-                            <span class="text-2xl text-indigo-600 font-bold bg-indigo-50 px-3 py-1 rounded-xl" id="days-display">90 天</span>
+                            <span class="text-2xl text-indigo-600 font-bold bg-indigo-50 px-4 py-1.5 rounded-2xl border border-indigo-100 self-stretch sm:self-auto text-center" id="days-display">90 天</span>
                         </div>
-                        <input type="range" id="days-slider" min="0" max="365" value="90" 
-                            class="w-full h-2 bg-slate-100 rounded-lg appearance-none cursor-pointer accent-indigo-600">
+                        <div class="py-2">
+                            <input type="range" id="days-slider" min="0" max="365" value="90" 
+                                class="w-full h-3 bg-slate-100 rounded-lg appearance-none cursor-pointer accent-indigo-600 transition-all">
+                        </div>
                         <div class="flex justify-between text-[10px] text-slate-400 font-bold px-1">
                             <span>0 天</span>
                             <span>100 天 (警戒區)</span>
-                            <span>183 天 (法定徵集強制線)</span>
+                            <span>183 天 (強制徵集線)</span>
                             <span>365 天</span>
                         </div>
                     </div>
                     
                     <!-- 法規規則說明 -->
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                        <div class="p-4 bg-slate-50 rounded-2xl border border-slate-100 text-xs space-y-2">
+                        <div class="p-4 bg-slate-50/70 rounded-2xl border border-slate-100 text-xs space-y-2 hover:bg-slate-50 transition-colors">
                             <div class="font-bold text-slate-700 flex items-center gap-1.5">
-                                <span class="w-2 h-2 rounded-full bg-indigo-500"></span>
+                                <span class="w-2.5 h-2.5 rounded-full bg-indigo-500"></span>
                                 鐵律一：單一曆年累計不滿 183 天
                             </div>
                             <p class="text-slate-500 leading-relaxed">
                                 自 19 歲當年 1 月 1 日起，在<strong>任何單一曆年內（1/1～12/31）在台累積停留達 183 天（含）</strong>，其僑民暫緩徵集條件將當即失效，依法限制出境並強制徵集入伍。
                             </p>
                         </div>
-                        <div class="p-4 bg-slate-50 rounded-2xl border border-slate-100 text-xs space-y-2">
+                        <div class="p-4 bg-slate-50/70 rounded-2xl border border-slate-100 text-xs space-y-2 hover:bg-slate-50 transition-colors">
                             <div class="font-bold text-slate-700 flex items-center gap-1.5">
-                                <span class="w-2 h-2 rounded-full bg-indigo-500"></span>
+                                <span class="w-2.5 h-2.5 rounded-full bg-indigo-500"></span>
                                 鐵律二：跨年連續停留不滿 183 天
                             </div>
                             <p class="text-slate-500 leading-relaxed">
-                                自返回國內之翌日起算，<strong>連續停留台灣的時間亦不得達 183 天（含）</strong>。若跨越年度（例如年底回台待到隔年年初）且連續居住超過此限制，一樣會被依法辦理徵兵。
+                                自返回國內之翌日起算，<strong>連續停留台灣的時間亦不得達 183 天（含）</strong>。若跨越年度且連續居住超過此限制，一樣會被依法辦理徵兵。
                             </p>
                         </div>
                     </div>
                     
                     <!-- 闢謠與法律細節導正 -->
-                    <div class="text-xs text-indigo-700 bg-indigo-50/70 p-4 rounded-xl border border-indigo-100 flex items-start gap-2.5">
-                        <span class="text-lg leading-none">💡</span>
+                    <div class="text-xs text-indigo-700 bg-indigo-50/70 p-4 rounded-2xl border border-indigo-100 flex items-start gap-2.5">
+                        <span class="text-xl leading-none">💡</span>
                         <div class="space-y-1">
-                            <strong class="block">澄清誤區：「單次不能留台超過4個月 (120天)」之說法不適用於已加簽之僑民役男！</strong>
+                            <strong class="block">澄清誤區：「單次不能留台超過4個月」之說法不適用於已加簽之僑民役男！</strong>
                             <p class="text-slate-600 leading-relaxed">
-                                「出境後4個月之內必須返台（120天）」是內政部自 <strong>114年（2025年）9月8日起實施的出境新制補件效期</strong>。當僑民役男在台灣想出境時，若來不及上傳「返國前4個月內往返僑居地之證明（如機票）」，可先比照一般役男線上申請短期出境，此時出境才需受「4個月內返國且補件」限制。這<strong>並非在台灣境內的停留天數上限</strong>。只要未達 183 天，僑民役男在台停留天數完全合規。
+                                「出境後4個月之內必須返台」是內政部自 <strong>2025年9月8日起實施的出境新制補件效期</strong>。當僑民役男在台灣想出境時，若來不及上傳往返證明，可先申請短期出境，此時才受4個月內返國補件限制。這<strong>並非在台停留天數上限</strong>。只要未達 183 天，在台停留天數完全合規。
                             </p>
                         </div>
                     </div>
                 </div>
 
                 <!-- 動態風險顯示卡 -->
-                <div id="risk-card" class="rounded-3xl p-6 sm:p-8 flex flex-col justify-between transition-all duration-300 bg-emerald-50 border border-emerald-100 text-emerald-900">
+                <div id="risk-card" class="rounded-3xl p-6 sm:p-8 flex flex-col justify-between transition-all duration-300 bg-emerald-50 border border-emerald-100 text-emerald-900 glass-glow-emerald">
                     <div class="space-y-6">
                         <div class="flex items-center justify-between">
-                            <span class="text-xs font-bold uppercase tracking-wider block text-emerald-700 bg-emerald-100 px-2.5 py-1 rounded-full" id="risk-badge">安全綠燈</span>
-                            <span class="text-xs font-medium text-slate-400">役政署判定指標</span>
+                            <span class="text-xs font-bold uppercase tracking-wider block text-emerald-700 bg-emerald-100 px-3 py-1 rounded-full border border-emerald-200" id="risk-badge">安全綠燈</span>
+                            <span class="text-[10px] font-semibold text-emerald-600/70">役政署判定指標</span>
                         </div>
                         
                         <div class="space-y-2">
@@ -228,7 +265,7 @@
                         </div>
                     </div>
                     
-                    <div class="mt-6 pt-4 border-t border-emerald-200/50 text-[11px] text-emerald-600/70">
+                    <div class="mt-6 pt-4 border-t border-emerald-200/50 text-[10px] text-emerald-600/70">
                         *天數計算以移民署之電腦入出境紀錄為準，入境當天不計，出境當天計算。
                     </div>
                 </div>
@@ -239,21 +276,23 @@
         <div id="tab-checker" class="tab-content hidden space-y-6">
             <div class="flex flex-col space-y-1">
                 <h2 class="text-xl font-bold text-slate-900 flex items-center gap-2">
-                    <svg class="w-5 h-5 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path></svg>
-                    雙重國籍兵役風險客製化診斷
+                    🔮 雙重國籍兵役風險客製化診斷
                 </h2>
-                <p class="text-xs text-slate-400">請填寫孩子目前的身分現況，系統將即時計算關鍵時程與兵役曝險狀態。</p>
+                <p class="text-xs text-slate-400">填寫孩子目前的身分現況，系統將即時計算關鍵時程與兵役曝險狀態。</p>
             </div>
 
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
                 <!-- 輸入表單 -->
                 <div class="lg:col-span-1 bg-white border border-slate-100 rounded-3xl p-6 shadow-sm space-y-6">
-                    <h3 class="font-bold text-slate-900 text-sm border-b border-slate-100 pb-3">孩子基本資訊</h3>
+                    <h3 class="font-bold text-slate-900 text-sm border-b border-slate-100 pb-3 flex items-center gap-2">
+                        <span class="w-3 h-3 rounded-full bg-indigo-500"></span>
+                        孩子基本資訊
+                    </h3>
                     
-                    <!-- 出生西元（已全面修正：足歲區間 vs 官方兵役年齡與滿15歲年底標記，精準無死角） -->
+                    <!-- 出生西元（精密校準） -->
                     <div class="space-y-2">
-                        <label class="block text-xs font-semibold text-slate-500">出生年份與年齡（已精密校準）</label>
-                        <select id="birth-year" onchange="calculateRisk()" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                        <label class="block text-xs font-semibold text-slate-500">出生年份與年齡（2026現況）</label>
+                        <select id="birth-year" onchange="calculateRisk()" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-all">
                             <option value="2016">2016 年生 (實歲 9~10 歲，2031 年底滿 15 歲)</option>
                             <option value="2015">2015 年生 (實歲 10~11 歲，2030 年底滿 15 歲)</option>
                             <option value="2014">2014 年生 (實歲 11~12 歲，2029 年底滿 15 歲)</option>
@@ -271,10 +310,10 @@
                     <div class="space-y-2">
                         <label class="block text-xs font-semibold text-slate-500">外國居留權/公民權</label>
                         <div class="grid grid-cols-2 gap-2">
-                            <button type="button" onclick="setSelect('has-foreign', true)" id="btn-foreign-yes" class="foreign-btn py-2 px-3 text-sm font-medium rounded-xl border border-indigo-600 bg-indigo-50 text-indigo-700 transition-all cursor-pointer text-center">
+                            <button type="button" onclick="setSelect('has-foreign', true)" id="btn-foreign-yes" class="foreign-btn py-2.5 px-3 text-xs font-bold rounded-xl border border-indigo-600 bg-indigo-50 text-indigo-700 transition-all cursor-pointer text-center">
                                 已取得外國籍
                             </button>
-                            <button type="button" onclick="setSelect('has-foreign', false)" id="btn-foreign-no" class="foreign-btn py-2 px-3 text-sm font-medium rounded-xl border border-slate-200 bg-white text-slate-600 transition-all cursor-pointer text-center">
+                            <button type="button" onclick="setSelect('has-foreign', false)" id="btn-foreign-no" class="foreign-btn py-2.5 px-3 text-xs font-bold rounded-xl border border-slate-200 bg-white text-slate-600 transition-all cursor-pointer text-center">
                                 尚未取得/辦理中
                             </button>
                         </div>
@@ -283,7 +322,7 @@
                     <!-- 預估出國留學（離開台灣）時間 -->
                     <div class="space-y-2">
                         <label class="block text-xs font-semibold text-slate-500">預計「出國就學」的時間點</label>
-                        <select id="leave-timeline" onchange="calculateRisk()" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                        <select id="leave-timeline" onchange="calculateRisk()" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-all">
                             <option value="before-15" selected>15歲那年 12月31日 之前出國</option>
                             <option value="between-16-18">16至18歲之間出國</option>
                             <option value="after-19">19歲之後才計劃出國</option>
@@ -295,18 +334,18 @@
                     <div class="space-y-2">
                         <label class="block text-xs font-semibold text-slate-500">台灣戶籍狀態</label>
                         <div class="grid grid-cols-1 gap-2 text-xs">
-                            <label class="flex items-center gap-2 p-2.5 bg-slate-50 rounded-xl border border-slate-200 cursor-pointer">
+                            <label class="flex items-center gap-2.5 p-3 bg-slate-50 rounded-xl border border-slate-200 cursor-pointer hover:bg-slate-100 transition-all">
                                 <input type="radio" name="huji" value="yes" checked onchange="calculateRisk()" class="accent-indigo-600">
-                                <span>在台設有戶籍（有身分證字號）</span>
+                                <span class="font-medium text-slate-700">在台設有戶籍（有身分證字號）</span>
                             </label>
-                            <label class="flex items-center gap-2 p-2.5 bg-slate-50 rounded-xl border border-slate-200 cursor-pointer">
+                            <label class="flex items-center gap-2.5 p-3 bg-slate-50 rounded-xl border border-slate-200 cursor-pointer hover:bg-slate-100 transition-all">
                                 <input type="radio" name="huji" value="no" onchange="calculateRisk()" class="accent-indigo-600">
-                                <span>從未在台設籍（無身分證，如無戶籍國民）</span>
+                                <span class="font-medium text-slate-700">從未在台設籍（無身分證，如無戶籍國民）</span>
                             </label>
                         </div>
                     </div>
 
-                    <button onclick="calculateRisk()" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-3 px-4 rounded-xl text-sm transition-all shadow-md hover:shadow-lg cursor-pointer flex items-center justify-center gap-2">
+                    <button onclick="calculateRisk()" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3.5 px-4 rounded-xl text-sm transition-all shadow-md hover:shadow-lg active:scale-95 cursor-pointer flex items-center justify-center gap-2">
                         <span>生成專屬診斷報告</span>
                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
                     </button>
@@ -317,11 +356,11 @@
                     <div class="space-y-6">
                         <div class="flex items-center justify-between border-b border-slate-100 pb-4">
                             <span class="text-xs font-bold uppercase tracking-wider text-slate-400">系統即時分析報告</span>
-                            <span id="report-date" class="text-xs text-indigo-600 font-semibold bg-indigo-50 px-2.5 py-1 rounded-full"></span>
+                            <span id="report-date" class="text-xs text-indigo-600 font-semibold bg-indigo-50 px-3 py-1 rounded-full border border-indigo-100"></span>
                         </div>
 
                         <!-- 風險等級看板 -->
-                        <div class="flex items-start gap-4 p-4 rounded-2xl bg-amber-50 border border-amber-100" id="diag-banner">
+                        <div class="flex items-start gap-4 p-4 rounded-2xl bg-amber-50 border border-amber-100 transition-all duration-300" id="diag-banner">
                             <div class="p-3 bg-amber-500 text-white rounded-xl font-bold text-lg" id="diag-risk-level">黃燈</div>
                             <div class="space-y-1">
                                 <h4 class="font-bold text-slate-900" id="diag-title">中度風險：關鍵抉擇期</h4>
@@ -335,20 +374,20 @@
                         <div class="space-y-3">
                             <h4 class="text-xs font-bold text-slate-400 uppercase tracking-wider">孩子重要法律年表 (以西元計算)</h4>
                             <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
-                                <div class="bg-slate-50 p-3 rounded-xl border border-slate-100 text-center space-y-1">
+                                <div class="bg-slate-50 p-4 rounded-xl border border-slate-100 text-center space-y-1 hover:shadow-sm transition-shadow">
                                     <span class="text-[10px] text-slate-400 font-bold block">15歲關鍵截止線</span>
                                     <span class="text-sm font-extrabold text-slate-900" id="node-15">2027年 12月 31日</span>
-                                    <span class="text-[9px] text-indigo-600 font-semibold block bg-indigo-50 py-0.5 rounded">在此之前出國建立事實</span>
+                                    <span class="text-[9px] text-indigo-600 font-bold block bg-indigo-50 py-0.5 rounded-full mt-1">在此之前出國建立事實</span>
                                 </div>
-                                <div class="bg-slate-50 p-3 rounded-xl border border-slate-100 text-center space-y-1">
+                                <div class="bg-slate-50 p-4 rounded-xl border border-slate-100 text-center space-y-1 hover:shadow-sm transition-shadow">
                                     <span class="text-[10px] text-slate-400 font-bold block">16歲接近役齡管制</span>
                                     <span class="text-sm font-extrabold text-slate-900" id="node-16">2028年 起</span>
-                                    <span class="text-[9px] text-amber-600 font-semibold block bg-amber-50 py-0.5 rounded">出境受到役審嚴格限制</span>
+                                    <span class="text-[9px] text-amber-600 font-bold block bg-amber-50 py-0.5 rounded-full mt-1">出境受到役審嚴格限制</span>
                                 </div>
-                                <div class="bg-slate-50 p-3 rounded-xl border border-slate-100 text-center space-y-1">
+                                <div class="bg-slate-50 p-4 rounded-xl border border-slate-100 text-center space-y-1 hover:shadow-sm transition-shadow">
                                     <span class="text-[10px] text-slate-400 font-bold block">19歲正式役齡 (徵兵)</span>
                                     <span class="text-sm font-extrabold text-slate-900" id="node-19">2031年 起</span>
-                                    <span class="text-[9px] text-rose-600 font-semibold block bg-rose-50 py-0.5 rounded">未辦理僑居將依法徵集</span>
+                                    <span class="text-[9px] text-rose-600 font-bold block bg-rose-50 py-0.5 rounded-full mt-1">未辦理僑居將依法徵集</span>
                                 </div>
                             </div>
                         </div>
@@ -356,16 +395,16 @@
                         <!-- 專屬建議行動指南 -->
                         <div class="space-y-3">
                             <h4 class="text-xs font-bold text-slate-400 uppercase tracking-wider">專屬行動指引與法規建議</h4>
-                            <div class="space-y-2 text-xs leading-relaxed" id="diag-advice">
+                            <div class="space-y-3 text-xs leading-relaxed" id="diag-advice">
                                 <!-- 這裡會由 JS 動態填充 -->
                             </div>
                         </div>
                     </div>
 
-                    <!-- 底部免責聲明與操作 -->
+                    <!-- 底部操作 -->
                     <div class="mt-6 pt-4 border-t border-slate-100 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400">
                         <span>💡 以上診斷基於中華民國現行《兵役法》及《役男出境處理辦法》研判。</span>
-                        <button onclick="window.print()" class="text-indigo-600 hover:text-indigo-700 font-semibold flex items-center gap-1.5 cursor-pointer">
+                        <button onclick="window.print()" class="text-indigo-600 hover:text-indigo-700 font-bold flex items-center gap-1.5 cursor-pointer bg-indigo-50/50 px-3 py-1.5 rounded-lg border border-indigo-100 hover:scale-105 transition-all">
                             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"></path></svg>
                             列印此診斷報告
                         </button>
@@ -378,8 +417,7 @@
         <div id="tab-roadmap" class="tab-content hidden space-y-8">
             <div class="flex flex-col space-y-1">
                 <h2 class="text-xl font-bold text-slate-900 flex items-center gap-2">
-                    <svg class="w-5 h-5 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"></path></svg>
-                    兵役合規黃金時序與申辦攻略
+                    🎯 兵役合規黃金時序與申辦攻略
                 </h2>
                 <p class="text-xs text-slate-400">從 TAS/TES 國際學校到成功獲得海外僑民簽證的標準路徑。</p>
             </div>
@@ -391,17 +429,17 @@
                     <!-- 節點 1 -->
                     <div class="relative">
                         <div class="absolute -left-[35px] sm:-left-[43px] top-1.5 w-6 h-6 rounded-full bg-indigo-600 border-4 border-white shadow flex items-center justify-center">
-                            <span class="text-[9px] text-white">1</span>
+                            <span class="text-[9px] font-bold text-white">1</span>
                         </div>
                         <div class="space-y-2">
                             <div class="flex flex-wrap items-center gap-2">
                                 <h3 class="font-bold text-slate-900 text-sm sm:text-base">第一階段：15歲當年底前 —— 扭轉在台生活重心</h3>
-                                <span class="text-[10px] font-bold text-indigo-600 bg-indigo-50 px-2 py-0.5 rounded">黃金生死線</span>
+                                <span class="text-[10px] font-bold text-indigo-600 bg-indigo-50 px-2.5 py-0.5 rounded-full border border-indigo-100">黃金生死線</span>
                             </div>
                             <p class="text-xs text-slate-500 leading-relaxed">
                                 <strong>行動要點：</strong>孩子必須在滿 15 歲當年之 12 月 31 日前出國就學（通常為相當於美制九年級上學期結束前）。在此之前出國，不需經役審單位同意，能完全避開「接近役齡男子」的出境審查。
                             </p>
-                            <div class="bg-rose-50 p-3 rounded-xl border border-rose-100 text-[11px] text-rose-800 leading-relaxed">
+                            <div class="bg-rose-50 p-3.5 rounded-xl border border-rose-100 text-[11px] text-rose-800 leading-relaxed">
                                 ⚠️ <strong>決策警告：</strong>如果繼續留在 TAS、TES 等國內外僑學校就讀，在法律上即被判定「生活重心完全在台灣」，一旦越過 12 月 31 日，隔年 1 月 1 日起將因進入「接近役齡」而被限制出境，出國求學的難度與管制將大幅增高。
                             </div>
                         </div>
@@ -410,17 +448,17 @@
                     <!-- 節點 2 -->
                     <div class="relative">
                         <div class="absolute -left-[35px] sm:-left-[43px] top-1.5 w-6 h-6 rounded-full bg-slate-200 border-4 border-white shadow flex items-center justify-center">
-                            <span class="text-[9px] text-slate-600">2</span>
+                            <span class="text-[9px] font-bold text-slate-600">2</span>
                         </div>
                         <div class="space-y-2">
                             <div class="flex flex-wrap items-center gap-2">
                                 <h3 class="font-bold text-slate-900 text-sm sm:text-base">第二階段：16～18歲 —— 建立並累積實質海外居住事實</h3>
-                                <span class="text-[10px] font-bold text-slate-500 bg-slate-100 px-2 py-0.5 rounded">海外扎根期</span>
+                                <span class="text-[10px] font-bold text-slate-500 bg-slate-100 px-2.5 py-0.5 rounded-full">海外扎根期</span>
                             </div>
                             <p class="text-xs text-slate-500 leading-relaxed">
                                 <strong>行動要點：</strong>在國外求學（高中階段），必須在海外累積符合「僑民」定義的居住事實。
                             </p>
-                            <div class="bg-slate-50 p-3 rounded-xl border border-slate-100 text-[11px] text-slate-600 space-y-1">
+                            <div class="bg-slate-50 p-4 rounded-xl border border-slate-100 text-[11px] text-slate-600 space-y-1">
                                 <div class="font-bold text-slate-700">僑民身份居住認定硬性標準：</div>
                                 <ul class="list-disc pl-4 space-y-1 text-slate-500">
                                     <li>取得外國居留權（如綠卡或外國護照公民權）。</li>
@@ -434,17 +472,17 @@
                     <!-- 節點 3 -->
                     <div class="relative">
                         <div class="absolute -left-[35px] sm:-left-[43px] top-1.5 w-6 h-6 rounded-full bg-emerald-600 border-4 border-white shadow flex items-center justify-center">
-                            <span class="text-[9px] text-white">3</span>
+                            <span class="text-[9px] font-bold text-white">3</span>
                         </div>
                         <div class="space-y-2">
                             <div class="flex flex-wrap items-center gap-2">
                                 <h3 class="font-bold text-slate-900 text-sm sm:text-base">第三階段：18歲年底前（或第一次回台前） —— 辦理「僑居身分加簽」</h3>
-                                <span class="text-[10px] font-bold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded">法律身分確立</span>
+                                <span class="text-[10px] font-bold text-emerald-600 bg-emerald-50 px-2.5 py-0.5 rounded-full border border-emerald-100">法律身分確立</span>
                             </div>
                             <p class="text-xs text-slate-500 leading-relaxed">
                                 <strong>行動要點：</strong>符合條件後，必須在孩子滿 18 歲當年的 12 月 31 日前（或 19 歲起第一次返台前）完成「僑居加簽」手續。
                             </p>
-                            <div class="bg-emerald-50/50 p-3 rounded-xl border border-emerald-100/50 text-[11px] text-emerald-700/90 leading-relaxed space-y-1">
+                            <div class="bg-emerald-50/50 p-4 rounded-xl border border-emerald-100/50 text-[11px] text-emerald-700/90 leading-relaxed space-y-1">
                                 <p>🎯 <strong>成功加簽後：</strong> 孩子在國內將升級為「僑民役男」，適用天數管控與暫緩徵集。19 歲起回台，僅需遵守「年度累積不滿 183 天且跨年連續不滿 183 天」之規定。</p>
                                 <p class="text-slate-500">💡 <strong>辦理地點：</strong>可於海外向中華民國駐外館處申請；若人在台灣，可先向僑委會取得核准函，再至外交部領事事務局辦理加簽。</p>
                             </div>
@@ -456,27 +494,27 @@
 
             <!-- 常見問題 Q&A -->
             <div class="space-y-4">
-                <h3 class="font-bold text-slate-900 text-lg">家長常見高頻問答 (FAQ)</h3>
+                <h3 class="font-bold text-slate-900 text-lg">💡 家長常見高頻問答 (FAQ)</h3>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div class="bg-white p-5 rounded-2xl border border-slate-100 space-y-2">
+                    <div class="bg-white p-5 rounded-2xl border border-slate-100 space-y-2 hover:shadow-sm transition-all">
                         <h4 class="font-bold text-xs text-indigo-600 uppercase">Q1: 如果已經超過 15 歲，目前高一了才想出國怎麼辦？</h4>
                         <p class="text-xs text-slate-500 leading-relaxed">
                             16 歲以上（接近役齡）若未出國，出境管制極嚴。若要出國就學，必須檢附<strong>「國外高級中等以上學校入學許可」</strong>，且有年齡限制（高中生出國就學不得超過 19 歲），且不符合在台設籍役男的一般出境事由。建議儘速向役政單位與專業顧問確認個案。
                         </p>
                     </div>
-                    <div class="bg-white p-5 rounded-2xl border border-slate-100 space-y-2">
+                    <div class="bg-white p-5 rounded-2xl border border-slate-100 space-y-2 hover:shadow-sm transition-all">
                         <h4 class="font-bold text-xs text-indigo-600 uppercase">Q2: 聽說「除籍」就不用當兵了，這是真的嗎？</h4>
                         <p class="text-xs text-slate-500 leading-relaxed">
                             <strong>這是極具毀滅性的謠言！</strong> 所謂「除籍」僅是戶政機關因當事人出境超過兩年，依法辦理的「遷出登記」（非喪失國籍）。一旦孩子持護照入境台灣，戶政事務所會立刻將其戶籍恢復，兵役義務完全不受影響。
                         </p>
                     </div>
-                    <div class="bg-white p-5 rounded-2xl border border-slate-100 space-y-2">
+                    <div class="bg-white p-5 rounded-2xl border border-slate-100 space-y-2 hover:shadow-sm transition-all">
                         <h4 class="font-bold text-xs text-indigo-600 uppercase">Q3: 孩子可以用美國護照進台灣避開兵役嗎？</h4>
                         <p class="text-xs text-slate-500 leading-relaxed">
                             不行。雙重國籍在台灣法規中，只要有設過戶籍，即被視為中華民國公民。役政署與移民署系統已進行資料串接，凡在台設籍男子，即使持外國護照入境，其出入境紀錄與身分證字號完全連動，一旦達到服役天數或違反管制，一樣會被限制出境。
                         </p>
                     </div>
-                    <div class="bg-white p-5 rounded-2xl border border-slate-100 space-y-2">
+                    <div class="bg-white p-5 rounded-2xl border border-slate-100 space-y-2 hover:shadow-sm transition-all">
                         <h4 class="font-bold text-xs text-indigo-600 uppercase">Q4: 僑民身分加簽在台灣國內可以辦理嗎？</h4>
                         <p class="text-xs text-slate-500 leading-relaxed">
                             <strong>可以，不一定必須在國外辦理！</strong> 申辦地點取決於您目前所在的地區：<br>
@@ -494,8 +532,7 @@
             <!-- 分頁導言 -->
             <div class="flex flex-col space-y-1">
                 <h2 class="text-xl font-bold text-slate-900 flex items-center gap-2">
-                    <svg class="w-5 h-5 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
-                    中華民國護照「僑居身分加簽」核心資格及申辦指南
+                    🛡 中華民國護照「僑居身分加簽」核心資格及申辦指南
                 </h2>
                 <p class="text-xs text-slate-400">依據外交部領事事務局、僑務委員會與內政部最新法規，協助雙重國籍家庭完美規劃。</p>
             </div>
@@ -503,14 +540,14 @@
             <!-- 四大核心資格圖卡 -->
             <div class="bg-white border border-slate-100 rounded-3xl p-6 sm:p-8 shadow-sm space-y-6">
                 <h3 class="text-sm font-bold text-slate-900 border-b border-slate-100 pb-3 flex items-center gap-2">
-                    <span class="w-2.5 h-2.5 rounded-full bg-indigo-500"></span>
+                    <span class="w-2.5 h-2.5 rounded-full bg-emerald-500"></span>
                     四大法規核心資格 (四大條件缺一不可)
                 </h3>
                 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <!-- 條件1 -->
-                    <div class="p-5 bg-slate-50/70 border border-slate-100 rounded-2xl flex items-start gap-3.5">
-                        <div class="p-2.5 bg-indigo-50 text-indigo-600 rounded-xl font-bold text-sm leading-none shrink-0">1</div>
+                    <div class="p-5 bg-slate-50/70 border border-slate-100 rounded-2xl flex items-start gap-3.5 hover:bg-slate-50 transition-all">
+                        <div class="p-2.5 bg-indigo-50 text-indigo-600 rounded-xl font-bold text-sm leading-none shrink-0 border border-indigo-100">1</div>
                         <div class="space-y-1">
                             <h4 class="font-bold text-slate-900 text-sm">取得外國居留權</h4>
                             <p class="text-xs text-slate-500 leading-relaxed">
@@ -519,8 +556,8 @@
                         </div>
                     </div>
                     <!-- 條件2 -->
-                    <div class="p-5 bg-slate-50/70 border border-slate-100 rounded-2xl flex items-start gap-3.5">
-                        <div class="p-2.5 bg-indigo-50 text-indigo-600 rounded-xl font-bold text-sm leading-none shrink-0">2</div>
+                    <div class="p-5 bg-slate-50/70 border border-slate-100 rounded-2xl flex items-start gap-3.5 hover:bg-slate-50 transition-all">
+                        <div class="p-2.5 bg-indigo-50 text-indigo-600 rounded-xl font-bold text-sm leading-none shrink-0 border border-indigo-100">2</div>
                         <div class="space-y-1">
                             <h4 class="font-bold text-slate-900 text-sm">居住時間累積滿 4 年</h4>
                             <p class="text-xs text-slate-500 leading-relaxed">
@@ -529,22 +566,22 @@
                         </div>
                     </div>
                     <!-- 條件3 -->
-                    <div class="p-5 bg-slate-50/70 border border-slate-100 rounded-2xl flex items-start gap-3.5">
-                        <div class="p-2.5 bg-indigo-50 text-indigo-600 rounded-xl font-bold text-sm leading-none shrink-0">3</div>
+                    <div class="p-5 bg-slate-50/70 border border-slate-100 rounded-2xl flex items-start gap-3.5 hover:bg-slate-50 transition-all">
+                        <div class="p-2.5 bg-indigo-50 text-indigo-600 rounded-xl font-bold text-sm leading-none shrink-0 border border-indigo-100">3</div>
                         <div class="space-y-1">
                             <h4 class="font-bold text-slate-900 text-sm">近期居住事實要求（二擇一）</h4>
                             <div class="text-xs text-slate-500 space-y-1 mt-1 leading-relaxed">
-                                <p class="flex items-start gap-1"><span class="text-emerald-500">▪</span> <span>在僑居地<strong>連續住滿 6 個月</strong>。</span></p>
-                                <p class="flex items-start gap-1"><span class="text-emerald-500">▪</span> <span>最近 <strong>2 年每年</strong>在僑居地累計居住 <strong>8 個月以上</strong>。</span></p>
-                                <p class="text-[10px] text-amber-600 bg-amber-50 p-1.5 rounded mt-1">※ 若居住於<strong>無永久居留制度地區</strong>，須取得該地居留資格連續 4 年，且<strong>每年在國外累計居住 8 個月以上</strong>。</p>
+                                <p class="flex items-start gap-1"><span class="text-emerald-500 font-bold">▪</span> <span>在僑居地<strong>連續住滿 6 個月</strong>。</span></p>
+                                <p class="flex items-start gap-1"><span class="text-emerald-500 font-bold">▪</span> <span>最近 <strong>2 年每年</strong>在僑居地累計居住 <strong>8 個月以上</strong>。</span></p>
+                                <p class="text-[10px] text-amber-600 bg-amber-50 p-2 rounded-lg mt-2 border border-amber-100">※ 若居住於<strong>無永久居留制度地區</strong>，須取得該地居留資格連續 4 年，且<strong>每年在國外累計居住 8 個月以上</strong>。</p>
                             </div>
                         </div>
                     </div>
                     <!-- 條件4 -->
-                    <div class="p-5 bg-slate-50/70 border border-slate-100 rounded-2xl flex items-start gap-3.5">
-                        <div class="p-2.5 bg-rose-50 text-rose-600 rounded-xl font-bold text-sm leading-none shrink-0">4</div>
+                    <div class="p-5 bg-slate-50/70 border border-slate-100 rounded-2xl flex items-start gap-3.5 hover:bg-slate-50 transition-all">
+                        <div class="p-2.5 bg-rose-50 text-rose-600 rounded-xl font-bold text-sm leading-none shrink-0 border border-rose-100">4</div>
                         <div class="space-y-1">
-                            <h4 class="font-bold text-slate-900 text-sm">役男特別防線（19歲當年起）</h4>
+                            <h4 class="font-bold text-slate-900 text-sm">役男特別防線（19歲當日起）</h4>
                             <p class="text-xs text-slate-500 leading-relaxed">
                                 屆役齡男子（19 歲當年 1 月 1 日起）若要申辦，<strong>必須在役齡前取得僑居身分</strong>，或在役齡後<strong>「第一次返台前」</strong>已在海外向駐外館處取得此身分，且符合「每年在國內停留未超過 183 天」之限制。
                             </p>
@@ -554,11 +591,12 @@
             </div>
 
             <!-- 互動式：資格自檢沙盒 -->
-            <div class="bg-gradient-to-br from-slate-900 to-indigo-950 text-white rounded-3xl p-6 sm:p-8 shadow-md">
+            <div class="bg-gradient-to-br from-slate-900 via-slate-950 to-indigo-950 text-white rounded-3xl p-6 sm:p-8 shadow-xl relative overflow-hidden">
+                <div class="absolute -right-10 -bottom-10 w-40 h-40 bg-emerald-500/10 rounded-full blur-2xl"></div>
                 <div class="max-w-3xl space-y-6">
                     <div>
-                        <span class="text-[10px] uppercase tracking-wider text-emerald-400 font-bold bg-emerald-900/40 px-2.5 py-1 rounded-full">互動式自檢</span>
-                        <h3 class="text-xl font-bold text-white mt-2">10秒「僑居加簽資格」自檢沙盒</h3>
+                        <span class="text-[10px] uppercase tracking-wider text-emerald-400 font-bold bg-emerald-950/30 px-3 py-1 rounded-full border border-emerald-500/20">互動式自檢</span>
+                        <h3 class="text-xl font-bold text-white mt-2">✨ 10秒「僑居加簽資格」自檢沙盒</h3>
                         <p class="text-xs text-slate-300 mt-1">請勾選孩子目前的狀態，系統將立即判斷是否已具備申辦資格。</p>
                     </div>
 
@@ -569,33 +607,33 @@
                             <div class="space-y-1.5">
                                 <label class="block text-xs font-semibold text-slate-300">Q1. 取得外國永久居留權 (PR/綠卡) 或外國公民身分？</label>
                                 <div class="grid grid-cols-2 gap-2 text-xs">
-                                    <button type="button" onclick="setQCheck(1, 'yes')" id="btn-q1-yes" class="q-btn py-1.5 px-3 rounded-lg border border-slate-700 bg-slate-800 text-slate-300 hover:border-emerald-500 transition-all text-center">是 (有PR/外國籍)</button>
-                                    <button type="button" onclick="setQCheck(1, 'no')" id="btn-q1-no" class="q-btn py-1.5 px-3 rounded-lg border border-slate-700 bg-slate-800 text-slate-300 hover:border-emerald-500 transition-all text-center">否 (無/辦理中)</button>
+                                    <button type="button" onclick="setQCheck(1, 'yes')" id="btn-q1-yes" class="q-btn py-2 px-3 rounded-xl border border-slate-700 bg-slate-800 text-slate-300 hover:border-emerald-500 transition-all text-center font-bold cursor-pointer">是 (有PR/外國籍)</button>
+                                    <button type="button" onclick="setQCheck(1, 'no')" id="btn-q1-no" class="q-btn py-2 px-3 rounded-xl border border-slate-700 bg-slate-800 text-slate-300 hover:border-emerald-500 transition-all text-center font-bold cursor-pointer">否 (無/辦理中)</button>
                                 </div>
                             </div>
                             <!-- Q2 -->
                             <div class="space-y-1.5">
                                 <label class="block text-xs font-semibold text-slate-300">Q2. 是否已在國外「累計居住滿 4 年」以上？</label>
                                 <div class="grid grid-cols-2 gap-2 text-xs">
-                                    <button type="button" onclick="setQCheck(2, 'yes')" id="btn-q2-yes" class="q-btn py-1.5 px-3 rounded-lg border border-slate-700 bg-slate-800 text-slate-300 hover:border-emerald-500 transition-all text-center">是 (已滿 4 年)</button>
-                                    <button type="button" onclick="setQCheck(2, 'no')" id="btn-q2-no" class="q-btn py-1.5 px-3 rounded-lg border border-slate-700 bg-slate-800 text-slate-300 hover:border-emerald-500 transition-all text-center">否 (未滿 4 年)</button>
+                                    <button type="button" onclick="setQCheck(2, 'yes')" id="btn-q2-yes" class="q-btn py-2 px-3 rounded-xl border border-slate-700 bg-slate-800 text-slate-300 hover:border-emerald-500 transition-all text-center font-bold cursor-pointer">是 (已滿 4 年)</button>
+                                    <button type="button" onclick="setQCheck(2, 'no')" id="btn-q2-no" class="q-btn py-2 px-3 rounded-xl border border-slate-700 bg-slate-800 text-slate-300 hover:border-emerald-500 transition-all text-center font-bold cursor-pointer">否 (未滿 4 年)</button>
                                 </div>
                             </div>
                             <!-- Q3 -->
                             <div class="space-y-1.5">
                                 <label class="block text-xs font-semibold text-slate-300">Q3. 近期在僑居地的居住事實狀態為？</label>
-                                <select id="q3-select" onchange="runEligibilityCheck()" class="w-full bg-slate-800 border border-slate-700 rounded-lg px-3 py-1.5 text-xs text-slate-200 focus:outline-none focus:ring-1 focus:ring-emerald-500">
+                                <select id="q3-select" onchange="runEligibilityCheck()" class="w-full bg-slate-800 border border-slate-700 rounded-xl px-3 py-2.5 text-xs text-slate-200 focus:outline-none focus:ring-1 focus:ring-emerald-500">
                                     <option value="none">-- 請選擇 --</option>
                                     <option value="6m">已在僑居地「連續住滿 6 個月」</option>
                                     <option value="2y8m">最近 2 年「每年在國外累計居住 8 個月以上」</option>
-                                    <option value="no-pr-4y8m">無永居制度地區「取得居留連續4年且每年住滿8個月」</option>
+                                    <option value="no-pr-4y8m">無永居地區「取得居留連續4年且每年住滿8個月」</option>
                                     <option value="not-meet">以上皆不符合（停留時間不夠）</option>
                                 </select>
                             </div>
                             <!-- Q4 -->
                             <div class="space-y-1.5">
                                 <label class="block text-xs font-semibold text-slate-300">Q4. 孩子目前的年齡或役別狀態？</label>
-                                <select id="q4-select" onchange="runEligibilityCheck()" class="w-full bg-slate-800 border border-slate-700 rounded-lg px-3 py-1.5 text-xs text-slate-200 focus:outline-none focus:ring-1 focus:ring-emerald-500">
+                                <select id="q4-select" onchange="runEligibilityCheck()" class="w-full bg-slate-800 border border-slate-700 rounded-xl px-3 py-2.5 text-xs text-slate-200 focus:outline-none focus:ring-1 focus:ring-emerald-500">
                                     <option value="young">18 歲（含）以下（尚未面臨役齡）</option>
                                     <option value="19-never">19 歲以上，但「從未持台灣護照返台過」</option>
                                     <option value="19-returned">19 歲以上，且「已經持台灣護照返台過」</option>
@@ -604,7 +642,7 @@
                         </div>
 
                         <!-- 判斷結果看板 -->
-                        <div class="bg-slate-800/50 border border-slate-700/50 rounded-2xl p-5 flex flex-col justify-between" id="sandbox-result-box">
+                        <div class="bg-slate-800/50 border border-slate-700/50 rounded-2xl p-5 flex flex-col justify-between transition-all duration-300" id="sandbox-result-box">
                             <div class="space-y-3">
                                 <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest block">即時試算評估</span>
                                 <div id="sandbox-status-badge" class="inline-block text-[10px] font-bold bg-slate-700 px-2.5 py-0.5 rounded text-slate-300">待完成輸入</div>
@@ -624,10 +662,10 @@
             <!-- 申辦管道雙軌並行 (國內 vs 國外) -->
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <!-- 管道 A：人在國內 -->
-                <div class="bg-white border border-slate-100 rounded-3xl p-6 sm:p-8 shadow-sm flex flex-col justify-between space-y-6">
+                <div class="bg-white border border-slate-100 rounded-3xl p-6 sm:p-8 shadow-sm flex flex-col justify-between space-y-6 hover:shadow-md transition-shadow">
                     <div class="space-y-4">
                         <div class="flex items-center justify-between">
-                            <span class="text-xs font-bold uppercase tracking-widest text-indigo-600 bg-indigo-50 px-2.5 py-1 rounded-full">國內申辦管道</span>
+                            <span class="text-xs font-bold uppercase tracking-widest text-indigo-600 bg-indigo-50 px-2.5 py-1 rounded-full border border-indigo-100">國內申辦管道</span>
                             <span class="text-xs text-slate-400">雙機關共同審查</span>
                         </div>
                         <h3 class="text-lg font-bold text-slate-900 leading-tight">人在國內：先經僑委會取得核准函</h3>
@@ -649,10 +687,10 @@
                 </div>
 
                 <!-- 管道 B：人在國外 -->
-                <div class="bg-white border border-slate-100 rounded-3xl p-6 sm:p-8 shadow-sm flex flex-col justify-between space-y-6">
+                <div class="bg-white border border-slate-100 rounded-3xl p-6 sm:p-8 shadow-sm flex flex-col justify-between space-y-6 hover:shadow-md transition-shadow">
                     <div class="space-y-4">
                         <div class="flex items-center justify-between">
-                            <span class="text-xs font-bold uppercase tracking-widest text-indigo-600 bg-indigo-50 px-2.5 py-1 rounded-full">海外申辦管道</span>
+                            <span class="text-xs font-bold uppercase tracking-widest text-emerald-600 bg-emerald-50 px-2.5 py-1 rounded-full border border-emerald-100">海外申辦管道</span>
                             <span class="text-xs text-slate-400">最直接、無爭議</span>
                         </div>
                         <h3 class="text-lg font-bold text-slate-900 leading-tight">人在國外：向中華民國駐外館處辦理</h3>
@@ -675,7 +713,7 @@
                 </div>
             </div>
 
-            <!-- 應備文件與官方連結 -->
+            <!-- 應備文件自我檢視清單 -->
             <div class="bg-white border border-slate-100 rounded-3xl p-6 sm:p-8 shadow-sm space-y-6">
                 <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                     <h3 class="text-sm font-bold text-slate-900 flex items-center gap-2">
@@ -687,7 +725,7 @@
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <!-- 文件一 -->
-                    <label class="flex items-start gap-3 p-4 bg-slate-50/50 rounded-2xl border border-slate-100 hover:bg-slate-50 transition-all cursor-pointer">
+                    <label class="flex items-start gap-3 p-4 bg-slate-50/50 rounded-2xl border border-slate-100 hover:bg-indigo-50/20 hover:border-indigo-200 transition-all cursor-pointer">
                         <input type="checkbox" class="mt-1 accent-indigo-600 rounded">
                         <div class="space-y-0.5">
                             <span class="text-xs font-bold text-slate-900 block">中華民國普通護照正本</span>
@@ -695,7 +733,7 @@
                         </div>
                     </label>
                     <!-- 文件二 -->
-                    <label class="flex items-start gap-3 p-4 bg-slate-50/50 rounded-2xl border border-slate-100 hover:bg-slate-50 transition-all cursor-pointer">
+                    <label class="flex items-start gap-3 p-4 bg-slate-50/50 rounded-2xl border border-slate-100 hover:bg-indigo-50/20 hover:border-indigo-200 transition-all cursor-pointer">
                         <input type="checkbox" class="mt-1 accent-indigo-600 rounded">
                         <div class="space-y-0.5">
                             <span class="text-xs font-bold text-slate-900 block">僑居地有效居留證明</span>
@@ -703,7 +741,7 @@
                         </div>
                     </label>
                     <!-- 文件三 -->
-                    <label class="flex items-start gap-3 p-4 bg-slate-50/50 rounded-2xl border border-slate-100 hover:bg-slate-50 transition-all cursor-pointer">
+                    <label class="flex items-start gap-3 p-4 bg-slate-50/50 rounded-2xl border border-slate-100 hover:bg-indigo-50/20 hover:border-indigo-200 transition-all cursor-pointer">
                         <input type="checkbox" class="mt-1 accent-indigo-600 rounded">
                         <div class="space-y-0.5">
                             <span class="text-xs font-bold text-slate-900 block">中華民國護照加簽申請書</span>
@@ -711,7 +749,7 @@
                         </div>
                     </label>
                     <!-- 文件四 -->
-                    <label class="flex items-start gap-3 p-4 bg-slate-50/50 rounded-2xl border border-slate-100 hover:bg-slate-50 transition-all cursor-pointer">
+                    <label class="flex items-start gap-3 p-4 bg-slate-50/50 rounded-2xl border border-slate-100 hover:bg-indigo-50/20 hover:border-indigo-200 transition-all cursor-pointer">
                         <input type="checkbox" class="mt-1 accent-indigo-600 rounded">
                         <div class="space-y-0.5">
                             <span class="text-xs font-bold text-slate-900 block">內政部移民署入出國日期證明書</span>
@@ -723,10 +761,10 @@
 
             <!-- 官方直達連結與出處 -->
             <div class="space-y-4">
-                <h3 class="font-bold text-slate-900 text-sm">官方權威資源與法規出處直達</h3>
+                <h3 class="font-bold text-slate-900 text-sm">🔗 官方權威資源與法規出處直達</h3>
                 <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
                     <a href="https://www.ocac.gov.tw/OCAC/FAQ/List.aspx?nodeid=384" target="_blank" rel="noopener noreferrer" 
-                        class="bg-white p-4 rounded-2xl border border-slate-100 hover:border-indigo-500 transition-all block space-y-2 shadow-sm text-left group">
+                        class="bg-white p-4 rounded-2xl border border-slate-100 hover:border-indigo-500 hover:shadow-md transition-all block space-y-2 shadow-sm text-left group">
                         <div class="flex items-center justify-between">
                             <span class="text-[10px] font-bold text-indigo-600 uppercase">僑務委員會 (OCAC)</span>
                             <span class="text-xs text-slate-400 group-hover:text-indigo-600 transition-all">→</span>
@@ -736,7 +774,7 @@
                     </a>
 
                     <a href="https://www.roc-taiwan.org/uslax/post/13810.html" target="_blank" rel="noopener noreferrer" 
-                        class="bg-white p-4 rounded-2xl border border-slate-100 hover:border-indigo-500 transition-all block space-y-2 shadow-sm text-left group">
+                        class="bg-white p-4 rounded-2xl border border-slate-100 hover:border-indigo-500 hover:shadow-md transition-all block space-y-2 shadow-sm text-left group">
                         <div class="flex items-center justify-between">
                             <span class="text-[10px] font-bold text-emerald-600 uppercase">駐洛杉磯台北代表處</span>
                             <span class="text-xs text-slate-400 group-hover:text-emerald-600 transition-all">→</span>
@@ -746,7 +784,7 @@
                     </a>
 
                     <a href="https://www.boca.gov.tw/cp-31-25-2c4c1-1.html" target="_blank" rel="noopener noreferrer" 
-                        class="bg-white p-4 rounded-2xl border border-slate-100 hover:border-indigo-500 transition-all block space-y-2 shadow-sm text-left group">
+                        class="bg-white p-4 rounded-2xl border border-slate-100 hover:border-indigo-500 hover:shadow-md transition-all block space-y-2 shadow-sm text-left group">
                         <div class="flex items-center justify-between">
                             <span class="text-[10px] font-bold text-rose-600 uppercase">外交部領事事務局</span>
                             <span class="text-xs text-slate-400 group-hover:text-rose-600 transition-all">→</span>
@@ -792,7 +830,7 @@
             updateRiskCard(parseInt(slider.value));
         }
 
-        // 更新天數風險卡片狀態（完全基於183天條款）
+        // 更新天數風險卡片狀態（完全基於 183 天與連續天數條款）
         function updateRiskCard(days) {
             const card = document.getElementById('risk-card');
             const badge = document.getElementById('risk-badge');
@@ -802,67 +840,67 @@
 
             if (days < 120) {
                 // 安全綠燈
-                card.className = "rounded-3xl p-6 sm:p-8 flex flex-col justify-between transition-all duration-300 bg-emerald-50 border border-emerald-100 text-emerald-900";
-                badge.className = "text-xs font-bold uppercase tracking-wider block text-emerald-700 bg-emerald-100 px-2.5 py-1 rounded-full";
+                card.className = "rounded-3xl p-6 sm:p-8 flex flex-col justify-between transition-all duration-300 bg-emerald-50 border border-emerald-100 text-emerald-900 glass-glow-emerald hover:scale-[1.01]";
+                badge.className = "text-xs font-bold uppercase tracking-wider block text-emerald-700 bg-emerald-100 px-3 py-1 rounded-full border border-emerald-200";
                 badge.innerText = "安全綠燈";
                 status.innerText = "極度安全";
                 status.className = "text-2xl font-bold text-emerald-800";
                 desc.innerText = "在台停留時間控制在 120 天以內。不論是年度累積還是連續留台天數，都與 183 天徵兵線有極大的安全緩衝空間。";
                 bullets.innerHTML = `
                     <li class="flex items-start gap-1.5">
-                        <span class="text-emerald-500">✔</span>
+                        <span class="text-emerald-500 font-bold">✔</span>
                         <span>無任何強制服役風險</span>
                     </li>
                     <li class="flex items-start gap-1.5">
-                        <span class="text-emerald-500">✔</span>
+                        <span class="text-emerald-500 font-bold">✔</span>
                         <span>可持中華民國護照自由出入境</span>
                     </li>
                     <li class="flex items-start gap-1.5">
-                        <span class="text-emerald-500">✔</span>
+                        <span class="text-emerald-500 font-bold">✔</span>
                         <span>寒暑假短期探親、旅遊極度推薦</span>
                     </li>
                 `;
             } else if (days >= 120 && days <= 182) {
                 // 黃燈警戒
-                card.className = "rounded-3xl p-6 sm:p-8 flex flex-col justify-between transition-all duration-300 bg-amber-50 border border-amber-100 text-amber-900";
-                badge.className = "text-xs font-bold uppercase tracking-wider block text-amber-700 bg-amber-100 px-2.5 py-1 rounded-full";
+                card.className = "rounded-3xl p-6 sm:p-8 flex flex-col justify-between transition-all duration-300 bg-amber-50 border border-amber-100 text-amber-900 glass-glow-indigo hover:scale-[1.01]";
+                badge.className = "text-xs font-bold uppercase tracking-wider block text-amber-700 bg-amber-100 px-3 py-1 rounded-full border border-amber-200";
                 badge.innerText = "黃燈警戒";
                 status.innerText = "黃燈警戒區";
                 status.className = "text-2xl font-bold text-amber-800";
-                desc.innerText = "在台停留天數已累積達 120 天至 182 天。雖然尚未達到 183 天法定徵集線，打過預防針但已非常接近！必須特別留意不能有【跨年度連續留台超過 182 天】之情形。";
+                desc.innerText = "在台停留天數已累積達 120 天至 182 天。雖然尚未達到 183 天法定徵集線，但已非常接近！必須特別留意不能有【跨年度連續留台超過 182 天】之情形。";
                 bullets.innerHTML = `
                     <li class="flex items-start gap-1.5">
-                        <span class="text-amber-500">⚠</span>
+                        <span class="text-amber-500 font-bold">⚠</span>
                         <span>需精密算計該年度剩餘留台天數</span>
                     </li>
                     <li class="flex items-start gap-1.5">
-                        <span class="text-amber-500">⚠</span>
+                        <span class="text-amber-500 font-bold">⚠</span>
                         <span>注意避免跨年停留（連續留台天數觸線）</span>
                     </li>
                     <li class="flex items-start gap-1.5">
-                        <span class="text-amber-500">⚠</span>
+                        <span class="text-amber-500 font-bold">⚠</span>
                         <span>建議避免在台進行實習或長期實體居住</span>
                     </li>
                 `;
             } else {
                 // 紅燈危險
-                card.className = "rounded-3xl p-6 sm:p-8 flex flex-col justify-between transition-all duration-300 bg-rose-50 border border-rose-100 text-rose-900";
-                badge.className = "text-xs font-bold uppercase tracking-wider block text-rose-700 bg-rose-100 px-2.5 py-1 rounded-full";
+                card.className = "rounded-3xl p-6 sm:p-8 flex flex-col justify-between transition-all duration-300 bg-rose-50 border border-rose-100 text-rose-900 shadow-lg shadow-rose-100 hover:scale-[1.01]";
+                badge.className = "text-xs font-bold uppercase tracking-wider block text-rose-700 bg-rose-100 px-3 py-1 rounded-full border border-rose-200";
                 badge.innerText = "紅燈危險";
                 status.innerText = "觸發徵兵限制";
                 status.className = "text-2xl font-bold text-rose-800";
                 desc.innerText = "在台天數已達 183 天或以上！這意味著孩子已觸犯『單一曆年累計滿 183 天』或『連續留台滿 183 天』的兵役限制。僑民緩徵身分將被判定失效，限制出境！";
                 bullets.innerHTML = `
                     <li class="flex items-start gap-1.5">
-                        <span class="text-rose-500">✘</span>
+                        <span class="text-rose-500 font-bold">✘</span>
                         <span>依法將面臨強制徵兵服役</span>
                     </li>
                     <li class="flex items-start gap-1.5">
-                        <span class="text-rose-500">✘</span>
+                        <span class="text-rose-500 font-bold">✘</span>
                         <span>出境時將被海關當場攔截、限制出境</span>
                     </li>
                     <li class="flex items-start gap-1.5">
-                        <span class="text-rose-500">✘</span>
+                        <span class="text-rose-500 font-bold">✘</span>
                         <span>外國護照此時亦無法發揮避險效果</span>
                     </li>
                 `;
@@ -881,17 +919,38 @@
             // 更新按鈕樣式
             const buttons = document.querySelectorAll('.tab-btn');
             buttons.forEach(btn => {
-                btn.classList.remove('border-indigo-600', 'text-indigo-600');
-                btn.classList.add('border-transparent', 'text-slate-500');
+                // 移除活動中樣式（手機端與桌面端通用）
+                btn.classList.remove('border-indigo-600', 'text-indigo-600', 'bg-white', 'border-indigo-200');
+                btn.classList.add('border-transparent', 'text-slate-500', 'bg-slate-50/50');
+                
+                // 還原圖示背景
+                const iconContainer = btn.querySelector('span');
+                if (iconContainer) {
+                    if (btn.id.includes('qualifications')) {
+                        iconContainer.className = "p-1.5 bg-slate-100 rounded-lg md:bg-transparent text-slate-400";
+                    } else {
+                        iconContainer.className = "p-1.5 bg-slate-100 rounded-lg md:bg-transparent text-slate-400";
+                    }
+                }
             });
             
             const activeBtn = document.getElementById('btn-tab-' + tabId);
-            activeBtn.classList.remove('border-transparent', 'text-slate-500');
-            activeBtn.classList.add('border-indigo-600', 'text-indigo-600');
+            activeBtn.classList.remove('border-transparent', 'text-slate-500', 'bg-slate-50/50');
+            
+            // 設定活動樣式
+            if (tabId === 'qualifications') {
+                activeBtn.classList.add('border-indigo-600', 'text-indigo-600', 'bg-white', 'border-indigo-200');
+                const iconContainer = activeBtn.querySelector('span');
+                if (iconContainer) iconContainer.className = "p-1.5 bg-emerald-100 rounded-lg md:bg-transparent text-emerald-600";
+            } else {
+                activeBtn.classList.add('border-indigo-600', 'text-indigo-600', 'bg-white', 'border-indigo-200');
+                const iconContainer = activeBtn.querySelector('span');
+                if (iconContainer) iconContainer.className = "p-1.5 bg-indigo-100 rounded-lg md:bg-transparent text-indigo-600";
+            }
         }
 
         // 3. 診斷器邏輯
-        let hasForeignPassport = true; // 預設已取得
+        let hasForeignPassport = true; // 預設已取得外國護照
 
         function setSelect(type, val) {
             if (type === 'has-foreign') {
@@ -900,11 +959,11 @@
                 const btnNo = document.getElementById('btn-foreign-no');
                 
                 if (val) {
-                    btnYes.className = "foreign-btn py-2 px-3 text-sm font-medium rounded-xl border border-indigo-600 bg-indigo-50 text-indigo-700 transition-all cursor-pointer text-center";
-                    btnNo.className = "foreign-btn py-2 px-3 text-sm font-medium rounded-xl border border-slate-200 bg-white text-slate-600 transition-all cursor-pointer text-center";
+                    btnYes.className = "foreign-btn py-2.5 px-3 text-xs font-bold rounded-xl border border-indigo-600 bg-indigo-50 text-indigo-700 transition-all cursor-pointer text-center";
+                    btnNo.className = "foreign-btn py-2.5 px-3 text-xs font-bold rounded-xl border border-slate-200 bg-white text-slate-600 transition-all cursor-pointer text-center";
                 } else {
-                    btnYes.className = "foreign-btn py-2 px-3 text-sm font-medium rounded-xl border border-slate-200 bg-white text-slate-600 transition-all cursor-pointer text-center";
-                    btnNo.className = "foreign-btn py-2 px-3 text-sm font-medium rounded-xl border border-indigo-600 bg-indigo-50 text-indigo-700 transition-all cursor-pointer text-center";
+                    btnYes.className = "foreign-btn py-2.5 px-3 text-xs font-bold rounded-xl border border-slate-200 bg-white text-slate-600 transition-all cursor-pointer text-center";
+                    btnNo.className = "foreign-btn py-2.5 px-3 text-xs font-bold rounded-xl border border-indigo-600 bg-indigo-50 text-indigo-700 transition-all cursor-pointer text-center";
                 }
             }
             calculateRisk();
@@ -922,7 +981,7 @@
             const leaveTimeline = document.getElementById('leave-timeline').value;
             const hujiRadio = document.querySelector('input[name="huji"]:checked').value;
 
-            // 計算重要年齡節點 (西元 2012 + 15 = 2027)
+            // 計算重要年齡節點 (2012 + 15 = 2027)
             const year15 = birthYear + 15; // 15歲當年底
             const year16 = birthYear + 16; // 進入接近役齡
             const year19 = birthYear + 19; // 進入正式役齡
@@ -975,11 +1034,11 @@
                 diagAdvice.innerHTML = `
                     <div class="p-3 bg-slate-50 rounded-xl border border-slate-100 flex items-start gap-2">
                         <span class="text-indigo-600 font-bold">1.</span>
-                        <p class="text-slate-600"><strong>出境無阻礙：</strong>在西元 <strong>\${year15} 年 12 月 31 日前</strong> 出國，出境時完全不受任何兵役法規管制。請直接正常出境前往海外就讀。\${warningText}</p>
+                        <p class="text-slate-600"><strong>出境無阻礙：</strong>在西元 <strong>${year15} 年 12 月 31 日前</strong> 出國，出境時完全不受任何兵役法規管制。請直接正常出境前往海外就讀。${warningText}</p>
                     </div>
                     <div class="p-3 bg-slate-50 rounded-xl border border-slate-100 flex items-start gap-2">
                         <span class="text-indigo-600 font-bold">2.</span>
-                        <p class="text-slate-600"><strong>累積海外天數與申辦：</strong>在國外就學期間，請確保孩子<strong>在國外累計居住滿 4 年</strong>，且每年在國外居住滿 183 天。並在西元 <strong>\${birthYear + 18} 年 12 月 31 日前</strong>（滿18歲當年年底）前，持台灣護照在國內（經僑委會及領事事務局）或在海外駐外辦事處申請「僑居加簽」。</p>
+                        <p class="text-slate-600"><strong>累積海外天數與申辦：</strong>在國外就學期間，請確保孩子<strong>在國外累計居住滿 4 年</strong>，且每年在國外居住滿 183 天。並在西元 <strong>${birthYear + 18} 年 12 月 31 日前</strong>（滿18歲當年年底）前，持台灣護照在國內（經僑委會及領事事務局）或在海外駐外辦事處申請「僑居加簽」。</p>
                     </div>
                 `;
             } 
@@ -1004,33 +1063,33 @@
             }
             else if (leaveTimeline === 'stay-taiwan') {
                 // 路線 C：長期就讀國際學校（不打算出國）
-                diagBanner.className = "flex items-start gap-4 p-4 rounded-2xl bg-rose-50 border border-rose-100";
+                diagBanner.className = "flex items-start gap-4 p-4 rounded-2xl bg-rose-50 border border-rose-100 shadow-md shadow-rose-100";
                 diagRiskLevel.className = "p-3 bg-rose-500 text-white rounded-xl font-bold text-lg text-center min-w-[60px]";
                 diagRiskLevel.innerText = "高危";
                 diagTitle.innerText = "高危警告：長期留台就學，生活重心重合";
                 diagSummary.innerText = "若孩子長期就讀 TAS、TES 等在台國際學校，不打算在 15 歲年底前出國建立居住事實，將無法擺脫「生活重心在台」的認定，兵役義務將不可避免。";
 
                 diagAdvice.innerHTML = `
-                    <div class="p-3 bg-slate-50 rounded-xl border border-slate-100 flex items-start gap-2">
+                    <div class="p-3 bg-rose-50/50 rounded-xl border border-rose-100 flex items-start gap-2">
                         <span class="text-rose-600 font-bold">1.</span>
                         <p class="text-slate-600"><strong>無法取得僑民加簽：</strong>若孩子長期留台就學，因完全沒有「海外居住滿 4 年」之事實，不論持哪國護照，在法律上皆屬於一般在台設籍役男，19 歲起回台或長住隨時面臨強制徵兵服役。</p>
                     </div>
                     <div class="p-3 bg-slate-50 rounded-xl border border-slate-100 flex items-start gap-2">
                         <span class="text-rose-600 font-bold">2.</span>
-                        <p class="text-slate-600"><strong>建議方案：</strong>強烈建議及早規劃於 <strong>西元 \${year15} 年 12 月 31 日前</strong> 轉往海外就學，以建立合法的海外居住事實，避免往後在接近役齡或役齡期失去身分彈性。</p>
+                        <p class="text-slate-600"><strong>建議方案：</strong>強烈建議及早規劃於 <strong>西元 ${year15} 年 12 月 31 日前</strong> 轉往海外就學，以建立合法的海外居住事實，避免往後在接近役齡或役齡期失去身分彈性。</p>
                     </div>
                 `;
             }
             else {
                 // 路線 D：19歲之後才計劃出國
-                diagBanner.className = "flex items-start gap-4 p-4 rounded-2xl bg-rose-50 border border-rose-100";
+                diagBanner.className = "flex items-start gap-4 p-4 rounded-2xl bg-rose-50 border border-rose-100 shadow-md shadow-rose-100";
                 diagRiskLevel.className = "p-3 bg-rose-500 text-white rounded-xl font-bold text-lg text-center min-w-[60px]";
                 diagRiskLevel.innerText = "危險";
                 diagTitle.innerText = "極高風險：兵役義務不可避免";
                 diagSummary.innerText = "計劃在 19 歲之後出國。孩子自 19 歲（西元 " + year19 + " 年）起當年 1/1 起成為正式「役齡男子」，若未在海外居住並加簽僑居，回台灣探親或長期留台將有隨時被徵兵、限制出境之最高曝險！";
 
                 diagAdvice.innerHTML = `
-                    <div class="p-3 bg-slate-50 rounded-xl border border-slate-100 flex items-start gap-2">
+                    <div class="p-3 bg-rose-50/50 rounded-xl border border-rose-100 flex items-start gap-2">
                         <span class="text-rose-600 font-bold">1.</span>
                         <p class="text-slate-600"><strong>失去僑民申辦資格：</strong>一旦孩子年滿 19 歲，若過去未曾於 15 歲前出國或符合 18 歲前累積 4 年居住事實，在法律上將<strong>完全失去「僑民役男」的身分加簽資格</strong>。此時他屬於一般在台役男。</p>
                     </div>
@@ -1049,22 +1108,22 @@
                 const btnYes = document.getElementById('btn-q1-yes');
                 const btnNo = document.getElementById('btn-q1-no');
                 if (val === 'yes') {
-                    btnYes.className = "q-btn py-1.5 px-3 rounded-lg border border-emerald-500 bg-emerald-950/40 text-emerald-300 transition-all text-center cursor-pointer";
-                    btnNo.className = "q-btn py-1.5 px-3 rounded-lg border border-slate-700 bg-slate-800 text-slate-300 hover:border-emerald-500 transition-all text-center cursor-pointer";
+                    btnYes.className = "q-btn py-2.5 px-3 rounded-xl border border-emerald-500 bg-emerald-950/40 text-emerald-300 transition-all text-center cursor-pointer font-bold";
+                    btnNo.className = "q-btn py-2.5 px-3 rounded-xl border border-slate-700 bg-slate-800 text-slate-300 hover:border-emerald-500 transition-all text-center cursor-pointer font-bold";
                 } else {
-                    btnYes.className = "q-btn py-1.5 px-3 rounded-lg border border-slate-700 bg-slate-800 text-slate-300 hover:border-emerald-500 transition-all text-center cursor-pointer";
-                    btnNo.className = "q-btn py-1.5 px-3 rounded-lg border border-rose-500 bg-rose-950/40 text-rose-300 transition-all text-center cursor-pointer";
+                    btnYes.className = "q-btn py-2.5 px-3 rounded-xl border border-slate-700 bg-slate-800 text-slate-300 hover:border-emerald-500 transition-all text-center cursor-pointer font-bold";
+                    btnNo.className = "q-btn py-2.5 px-3 rounded-xl border border-rose-500 bg-rose-950/40 text-rose-300 transition-all text-center cursor-pointer font-bold";
                 }
             } else if (questionNum === 2) {
                 sandboxState.q2 = val;
                 const btnYes = document.getElementById('btn-q2-yes');
                 const btnNo = document.getElementById('btn-q2-no');
                 if (val === 'yes') {
-                    btnYes.className = "q-btn py-1.5 px-3 rounded-lg border border-emerald-500 bg-emerald-950/40 text-emerald-300 transition-all text-center cursor-pointer";
-                    btnNo.className = "q-btn py-1.5 px-3 rounded-lg border border-slate-700 bg-slate-800 text-slate-300 hover:border-emerald-500 transition-all text-center cursor-pointer";
+                    btnYes.className = "q-btn py-2.5 px-3 rounded-xl border border-emerald-500 bg-emerald-950/40 text-emerald-300 transition-all text-center cursor-pointer font-bold";
+                    btnNo.className = "q-btn py-2.5 px-3 rounded-xl border border-slate-700 bg-slate-800 text-slate-300 hover:border-emerald-500 transition-all text-center cursor-pointer font-bold";
                 } else {
-                    btnYes.className = "q-btn py-1.5 px-3 rounded-lg border border-slate-700 bg-slate-800 text-slate-300 hover:border-emerald-500 transition-all text-center cursor-pointer";
-                    btnNo.className = "q-btn py-1.5 px-3 rounded-lg border border-rose-500 bg-rose-950/40 text-rose-300 transition-all text-center cursor-pointer";
+                    btnYes.className = "q-btn py-2.5 px-3 rounded-xl border border-slate-700 bg-slate-800 text-slate-300 hover:border-emerald-500 transition-all text-center cursor-pointer font-bold";
+                    btnNo.className = "q-btn py-2.5 px-3 rounded-xl border border-rose-500 bg-rose-950/40 text-rose-300 transition-all text-center cursor-pointer font-bold";
                 }
             }
             runEligibilityCheck();
@@ -1125,7 +1184,7 @@
                 rBox.className = "bg-rose-950/30 border border-rose-900/50 rounded-2xl p-5 flex flex-col justify-between";
                 rBadge.className = "inline-block text-[10px] font-bold bg-rose-900 text-rose-300 px-2.5 py-0.5 rounded max-w-max";
                 rBadge.innerText = "高危風險";
-                rTitle.innerText = "已屆役齡且已返台：可能失去辦理資格";
+                rTitle.innerText = "已屆役齡且已返台：可能失去辦辦資格";
                 rDesc.innerText = "依規定，19歲起已是正式役男。若在「第一次回台灣之前」未曾在海外辦妥僑居加簽，且已經持普通護照入境台灣，此時國內與國外主管機關極可能不予受理補辦。孩子入境後即可能因未具備僑民身份而遭役政單位限制出境、面臨服役！請儘速向法規單位或法律顧問確認個案。";
             } else if (q4Val === '19-never') {
                 rBox.className = "bg-emerald-950/40 border border-emerald-900/50 rounded-2xl p-5 flex flex-col justify-between";
