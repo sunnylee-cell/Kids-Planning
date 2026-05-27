@@ -1,0 +1,1147 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- 網頁標題 -->
+    <title>雙重國籍兵役安全導航</title>
+
+    <!-- 手機桌面 Icon -->
+    <link rel="apple-touch-icon" sizes="512x512" href="icon.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="icon.png">
+    <link rel="shortcut icon" href="icon.png">
+
+    <!-- iPhone PWA -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Kids Planning">
+
+    <!-- Android / Chrome -->
+    <meta name="theme-color" content="#111827">
+
+    <!-- Manifest -->
+    <link rel="manifest" href="manifest.json">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', 'Noto Sans TC', sans-serif;
+            background-color: #f8fafc;
+        }
+
+        /* 隱藏滾動條但保持功能 */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="text-slate-800 antialiased min-h-screen flex flex-col">
+
+    <!-- 頂部導航欄（已移除左上角標題） -->
+    <header class="border-b border-slate-100 bg-white/80 backdrop-blur-md sticky top-0 z-50">
+        <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
+            <!-- 左側留空以符合需求 -->
+            <div></div>
+            <div class="flex items-center space-x-4">
+                <span class="text-xs text-slate-400 font-medium">適用對象：已設籍雙重國籍家庭</span>
+                <span class="text-xs font-semibold text-indigo-600 bg-indigo-50 px-2.5 py-1 rounded-full">2026 法律最新版</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- 主要內容區 -->
+    <main class="max-w-5xl mx-auto px-4 sm:px-6 py-8 space-y-10 flex-grow w-full">
+        
+        <!-- 核心現況與核心公式 -->
+        <section class="grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch">
+            <div class="md:col-span-2 bg-white border border-slate-100 rounded-3xl p-6 sm:p-8 shadow-sm flex flex-col justify-between space-y-6">
+                <div class="space-y-4">
+                    <span class="text-xs font-semibold text-indigo-600 uppercase tracking-widest bg-indigo-50 px-2.5 py-1 rounded-full inline-block">核心現況與最大風險</span>
+                    <h1 class="text-2xl md:text-3xl font-bold tracking-tight text-slate-950 leading-tight">
+                        目前最大的風險，不是美國籍。<br>
+                        <span class="text-indigo-600">而是目前長期在台就學。</span>
+                    </h1>
+                    <p class="text-slate-600 text-sm leading-relaxed border-l-4 border-indigo-500 pl-4 bg-slate-50/50 py-3 pr-3 rounded-r-xl">
+                        台灣役政機關審查的核心是<strong>「生活重心是否在台灣」</strong>。如目前孩子就讀 <strong>TAS、TES等國際學校</strong>，在法律上屬於在台生活與就學階段。必須透過<strong>「國三（15歲）12月31日前出國」</strong>來扭轉此狀態，建立實質的海外居住事實，否則一旦進入「接近役齡」將面臨出境管制限制。
+                    </p>
+                </div>
+                <div class="border-t border-slate-100 pt-4 flex flex-wrap gap-4 text-xs text-slate-400">
+                    <div class="flex items-center gap-1">
+                        <svg class="w-4 h-4 text-emerald-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        合規目標：取得「僑民役男」資格
+                    </div>
+                    <div class="flex items-center gap-1">
+                        <svg class="w-4 h-4 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
+                        出境限制：16歲當年1月1日起管制
+                    </div>
+                </div>
+            </div>
+            <div class="bg-gradient-to-br from-slate-900 to-indigo-950 text-white rounded-3xl p-6 sm:p-8 flex flex-col justify-between border border-slate-800 shadow-md">
+                <div>
+                    <span class="text-[10px] uppercase tracking-wider text-indigo-300 font-bold bg-indigo-900/50 px-2.5 py-1 rounded-full inline-block">中華民國兵役核心公式</span>
+                    <div class="mt-4 space-y-2">
+                        <div class="flex items-center justify-between text-sm text-slate-300">
+                            <span>具中華民國國籍</span>
+                            <span class="text-emerald-400 font-bold">✔ 已具備</span>
+                        </div>
+                        <div class="flex items-center justify-between text-sm text-slate-300">
+                            <span>在台曾設有戶籍</span>
+                            <span class="text-emerald-400 font-bold">✔ 已具備</span>
+                        </div>
+                        <div class="w-full border-t border-slate-800 my-2"></div>
+                        <div class="bg-slate-800/50 p-3 rounded-xl border border-slate-700/50 text-center">
+                            <span class="text-xs text-slate-400 block">不論是否持有外國護照</span>
+                            <span class="text-sm font-bold text-rose-400">依法均有服兵役義務</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-4 text-[11px] text-indigo-200/80 leading-relaxed bg-indigo-900/40 p-3 rounded-xl border border-indigo-800/30">
+                    💡 <strong>家長常見誤區：</strong>「孩子拿美國護照進台灣就安全？」<br>
+                    <strong>正解：</strong>只要在台灣有過戶籍，不論持哪國護照入境，系統皆會與戶政、役政資料連動，達到特定天數或年齡即會被限制出境。
+                </div>
+            </div>
+        </section>
+
+        <!-- 分頁切換按鈕 -->
+        <div class="flex border-b border-slate-200 overflow-x-auto no-scrollbar whitespace-nowrap gap-2">
+            <button onclick="switchTab('simulator')" id="btn-tab-simulator" class="tab-btn px-4 sm:px-6 py-3 font-semibold text-sm border-b-2 border-indigo-600 text-indigo-600 transition-all cursor-pointer">
+                在台天數模擬器
+            </button>
+            <button onclick="switchTab('checker')" id="btn-tab-checker" class="tab-btn px-4 sm:px-6 py-3 font-semibold text-sm border-b-2 border-transparent text-slate-500 hover:text-slate-800 transition-all cursor-pointer">
+                專屬風險診斷器
+            </button>
+            <button onclick="switchTab('roadmap')" id="btn-tab-roadmap" class="tab-btn px-4 sm:px-6 py-3 font-semibold text-sm border-b-2 border-transparent text-slate-500 hover:text-slate-800 transition-all cursor-pointer">
+                關鍵時序與申辦指南
+            </button>
+            <button onclick="switchTab('qualifications')" id="btn-tab-qualifications" class="tab-btn px-4 sm:px-6 py-3 font-semibold text-sm border-b-2 border-transparent text-slate-500 hover:text-slate-800 transition-all cursor-pointer flex items-center gap-1.5">
+                <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+                僑居加簽資格與申辦完整指南
+            </button>
+        </div>
+
+        <!-- 區塊一：在台天數模擬器 -->
+        <div id="tab-simulator" class="tab-content space-y-6">
+            <div class="flex flex-col space-y-1">
+                <h2 class="text-xl font-bold text-slate-900 flex items-center gap-2">
+                    <svg class="w-5 h-5 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                    年度回台天數模擬器 (適用於已取得僑民役男身分者)
+                </h2>
+                <p class="text-xs text-slate-400">請拖動滑桿，模擬未來孩子「19 歲起（役齡當年 1/1 ～ 12/31）」預計在台灣停留的天數。</p>
+            </div>
+
+            <div class="bg-white border border-slate-100 rounded-3xl p-6 sm:p-8 shadow-sm grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="md:col-span-2 space-y-6 flex flex-col justify-between">
+                    <div class="space-y-4">
+                        <div class="flex justify-between items-center text-sm font-semibold">
+                            <span class="text-slate-600">預估年度留台總天數（暑假 + 寒假 + 短期回台）</span>
+                            <span class="text-2xl text-indigo-600 font-bold bg-indigo-50 px-3 py-1 rounded-xl" id="days-display">90 天</span>
+                        </div>
+                        <input type="range" id="days-slider" min="0" max="365" value="90" 
+                            class="w-full h-2 bg-slate-100 rounded-lg appearance-none cursor-pointer accent-indigo-600">
+                        <div class="flex justify-between text-[10px] text-slate-400 font-bold px-1">
+                            <span>0 天</span>
+                            <span>100 天 (警戒區)</span>
+                            <span>183 天 (法定徵集強制線)</span>
+                            <span>365 天</span>
+                        </div>
+                    </div>
+                    
+                    <!-- 法規規則說明 -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div class="p-4 bg-slate-50 rounded-2xl border border-slate-100 text-xs space-y-2">
+                            <div class="font-bold text-slate-700 flex items-center gap-1.5">
+                                <span class="w-2 h-2 rounded-full bg-indigo-500"></span>
+                                鐵律一：單一曆年累計不滿 183 天
+                            </div>
+                            <p class="text-slate-500 leading-relaxed">
+                                自 19 歲當年 1 月 1 日起，在<strong>任何單一曆年內（1/1～12/31）在台累積停留達 183 天（含）</strong>，其僑民暫緩徵集條件將當即失效，依法限制出境並強制徵集入伍。
+                            </p>
+                        </div>
+                        <div class="p-4 bg-slate-50 rounded-2xl border border-slate-100 text-xs space-y-2">
+                            <div class="font-bold text-slate-700 flex items-center gap-1.5">
+                                <span class="w-2 h-2 rounded-full bg-indigo-500"></span>
+                                鐵律二：跨年連續停留不滿 183 天
+                            </div>
+                            <p class="text-slate-500 leading-relaxed">
+                                自返回國內之翌日起算，<strong>連續停留台灣的時間亦不得達 183 天（含）</strong>。若跨越年度（例如年底回台待到隔年年初）且連續居住超過此限制，一樣會被依法辦理徵兵。
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- 闢謠與法律細節導正 -->
+                    <div class="text-xs text-indigo-700 bg-indigo-50/70 p-4 rounded-xl border border-indigo-100 flex items-start gap-2.5">
+                        <span class="text-lg leading-none">💡</span>
+                        <div class="space-y-1">
+                            <strong class="block">澄清誤區：「單次不能留台超過4個月 (120天)」之說法不適用於已加簽之僑民役男！</strong>
+                            <p class="text-slate-600 leading-relaxed">
+                                「出境後4個月之內必須返台（120天）」是內政部自 <strong>114年（2025年）9月8日起實施的出境新制補件效期</strong>。當僑民役男在台灣想出境時，若來不及上傳「返國前4個月內往返僑居地之證明（如機票）」，可先比照一般役男線上申請短期出境，此時出境才需受「4個月內返國且補件」限制。這<strong>並非在台灣境內的停留天數上限</strong>。只要未達 183 天，僑民役男在台停留天數完全合規。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 動態風險顯示卡 -->
+                <div id="risk-card" class="rounded-3xl p-6 sm:p-8 flex flex-col justify-between transition-all duration-300 bg-emerald-50 border border-emerald-100 text-emerald-900">
+                    <div class="space-y-6">
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs font-bold uppercase tracking-wider block text-emerald-700 bg-emerald-100 px-2.5 py-1 rounded-full" id="risk-badge">安全綠燈</span>
+                            <span class="text-xs font-medium text-slate-400">役政署判定指標</span>
+                        </div>
+                        
+                        <div class="space-y-2">
+                            <h3 id="risk-status" class="text-2xl font-bold text-emerald-800">極度安全</h3>
+                            <p id="risk-desc" class="text-sm text-emerald-700/90 leading-relaxed">
+                                停留天數控制完美（低於 120 天）。孩子能維持合法的海外僑民身份，自由進出台灣探親。
+                            </p>
+                        </div>
+
+                        <!-- 法律後果警示 -->
+                        <div class="border-t border-emerald-200/50 pt-4 space-y-3">
+                            <span class="text-xs font-bold text-emerald-800 block">管制風險評估：</span>
+                            <ul class="space-y-2 text-xs text-emerald-700/80" id="risk-bullets">
+                                <li class="flex items-start gap-1.5">
+                                    <span class="text-emerald-500">✔</span>
+                                    <span>無強制服役風險</span>
+                                </li>
+                                <li class="flex items-start gap-1.5">
+                                    <span class="text-emerald-500">✔</span>
+                                    <span>可持中華民國護照自由出入境</span>
+                                </li>
+                                <li class="flex items-start gap-1.5">
+                                    <span class="text-emerald-500">✔</span>
+                                    <span>寒暑假回台探親、實習無虞</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-6 pt-4 border-t border-emerald-200/50 text-[11px] text-emerald-600/70">
+                        *天數計算以移民署之電腦入出境紀錄為準，入境當天不計，出境當天計算。
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 區塊二：專屬風險診斷器 -->
+        <div id="tab-checker" class="tab-content hidden space-y-6">
+            <div class="flex flex-col space-y-1">
+                <h2 class="text-xl font-bold text-slate-900 flex items-center gap-2">
+                    <svg class="w-5 h-5 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path></svg>
+                    雙重國籍兵役風險客製化診斷
+                </h2>
+                <p class="text-xs text-slate-400">請填寫孩子目前的身分現況，系統將即時計算關鍵時程與兵役曝險狀態。</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <!-- 輸入表單 -->
+                <div class="lg:col-span-1 bg-white border border-slate-100 rounded-3xl p-6 shadow-sm space-y-6">
+                    <h3 class="font-bold text-slate-900 text-sm border-b border-slate-100 pb-3">孩子基本資訊</h3>
+                    
+                    <!-- 出生西元（已全面修正：足歲區間 vs 官方兵役年齡與滿15歲年底標記，精準無死角） -->
+                    <div class="space-y-2">
+                        <label class="block text-xs font-semibold text-slate-500">出生年份與年齡（已精密校準）</label>
+                        <select id="birth-year" onchange="calculateRisk()" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                            <option value="2016">2016 年生 (實歲 9~10 歲，2031 年底滿 15 歲)</option>
+                            <option value="2015">2015 年生 (實歲 10~11 歲，2030 年底滿 15 歲)</option>
+                            <option value="2014">2014 年生 (實歲 11~12 歲，2029 年底滿 15 歲)</option>
+                            <option value="2013">2013 年生 (實歲 12~13 歲，2028 年底滿 15 歲)</option>
+                            <option value="2012" selected>2012 年生 (實歲 13~14 歲，2027 年底滿 15 歲 — 您的寶貝)</option>
+                            <option value="2011">2011 年生 (實歲 14~15 歲，2026 年底滿 15 歲 — 關鍵生死線)</option>
+                            <option value="2010">2010 年生 (實歲 15~16 歲，已進入接近役齡管制期)</option>
+                            <option value="2009">2009 年生 (實歲 16~17 歲，已進入接近役齡管制期)</option>
+                            <option value="2008">2008 年生 (實歲 17~18 歲，申辦加簽臨界點)</option>
+                            <option value="2007">2007 年生 (實歲 18~19 歲，已進入正式役齡期)</option>
+                        </select>
+                    </div>
+
+                    <!-- 是否有外國護照居留權 -->
+                    <div class="space-y-2">
+                        <label class="block text-xs font-semibold text-slate-500">外國居留權/公民權</label>
+                        <div class="grid grid-cols-2 gap-2">
+                            <button type="button" onclick="setSelect('has-foreign', true)" id="btn-foreign-yes" class="foreign-btn py-2 px-3 text-sm font-medium rounded-xl border border-indigo-600 bg-indigo-50 text-indigo-700 transition-all cursor-pointer text-center">
+                                已取得外國籍
+                            </button>
+                            <button type="button" onclick="setSelect('has-foreign', false)" id="btn-foreign-no" class="foreign-btn py-2 px-3 text-sm font-medium rounded-xl border border-slate-200 bg-white text-slate-600 transition-all cursor-pointer text-center">
+                                尚未取得/辦理中
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- 預估出國留學（離開台灣）時間 -->
+                    <div class="space-y-2">
+                        <label class="block text-xs font-semibold text-slate-500">預計「出國就學」的時間點</label>
+                        <select id="leave-timeline" onchange="calculateRisk()" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                            <option value="before-15" selected>15歲那年 12月31日 之前出國</option>
+                            <option value="between-16-18">16至18歲之間出國</option>
+                            <option value="after-19">19歲之後才計劃出國</option>
+                            <option value="stay-taiwan">不打算出國，長期留台就讀 (如留在TAS/TES直至成年)</option>
+                        </select>
+                    </div>
+
+                    <!-- 台灣戶籍狀態 -->
+                    <div class="space-y-2">
+                        <label class="block text-xs font-semibold text-slate-500">台灣戶籍狀態</label>
+                        <div class="grid grid-cols-1 gap-2 text-xs">
+                            <label class="flex items-center gap-2 p-2.5 bg-slate-50 rounded-xl border border-slate-200 cursor-pointer">
+                                <input type="radio" name="huji" value="yes" checked onchange="calculateRisk()" class="accent-indigo-600">
+                                <span>在台設有戶籍（有身分證字號）</span>
+                            </label>
+                            <label class="flex items-center gap-2 p-2.5 bg-slate-50 rounded-xl border border-slate-200 cursor-pointer">
+                                <input type="radio" name="huji" value="no" onchange="calculateRisk()" class="accent-indigo-600">
+                                <span>從未在台設籍（無身分證，如無戶籍國民）</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <button onclick="calculateRisk()" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-3 px-4 rounded-xl text-sm transition-all shadow-md hover:shadow-lg cursor-pointer flex items-center justify-center gap-2">
+                        <span>生成專屬診斷報告</span>
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                    </button>
+                </div>
+
+                <!-- 診斷結果報告 -->
+                <div class="lg:col-span-2 bg-white border border-slate-100 rounded-3xl p-6 sm:p-8 shadow-sm flex flex-col justify-between">
+                    <div class="space-y-6">
+                        <div class="flex items-center justify-between border-b border-slate-100 pb-4">
+                            <span class="text-xs font-bold uppercase tracking-wider text-slate-400">系統即時分析報告</span>
+                            <span id="report-date" class="text-xs text-indigo-600 font-semibold bg-indigo-50 px-2.5 py-1 rounded-full"></span>
+                        </div>
+
+                        <!-- 風險等級看板 -->
+                        <div class="flex items-start gap-4 p-4 rounded-2xl bg-amber-50 border border-amber-100" id="diag-banner">
+                            <div class="p-3 bg-amber-500 text-white rounded-xl font-bold text-lg" id="diag-risk-level">黃燈</div>
+                            <div class="space-y-1">
+                                <h4 class="font-bold text-slate-900" id="diag-title">中度風險：關鍵抉擇期</h4>
+                                <p class="text-xs text-slate-500 leading-relaxed" id="diag-summary">
+                                    孩子目前就讀國際學校（TAS/TES），若要確保兵役安全，出國時序極具關鍵。
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- 關鍵時間節點表 -->
+                        <div class="space-y-3">
+                            <h4 class="text-xs font-bold text-slate-400 uppercase tracking-wider">孩子重要法律年表 (以西元計算)</h4>
+                            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                                <div class="bg-slate-50 p-3 rounded-xl border border-slate-100 text-center space-y-1">
+                                    <span class="text-[10px] text-slate-400 font-bold block">15歲關鍵截止線</span>
+                                    <span class="text-sm font-extrabold text-slate-900" id="node-15">2027年 12月 31日</span>
+                                    <span class="text-[9px] text-indigo-600 font-semibold block bg-indigo-50 py-0.5 rounded">在此之前出國建立事實</span>
+                                </div>
+                                <div class="bg-slate-50 p-3 rounded-xl border border-slate-100 text-center space-y-1">
+                                    <span class="text-[10px] text-slate-400 font-bold block">16歲接近役齡管制</span>
+                                    <span class="text-sm font-extrabold text-slate-900" id="node-16">2028年 起</span>
+                                    <span class="text-[9px] text-amber-600 font-semibold block bg-amber-50 py-0.5 rounded">出境受到役審嚴格限制</span>
+                                </div>
+                                <div class="bg-slate-50 p-3 rounded-xl border border-slate-100 text-center space-y-1">
+                                    <span class="text-[10px] text-slate-400 font-bold block">19歲正式役齡 (徵兵)</span>
+                                    <span class="text-sm font-extrabold text-slate-900" id="node-19">2031年 起</span>
+                                    <span class="text-[9px] text-rose-600 font-semibold block bg-rose-50 py-0.5 rounded">未辦理僑居將依法徵集</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 專屬建議行動指南 -->
+                        <div class="space-y-3">
+                            <h4 class="text-xs font-bold text-slate-400 uppercase tracking-wider">專屬行動指引與法規建議</h4>
+                            <div class="space-y-2 text-xs leading-relaxed" id="diag-advice">
+                                <!-- 這裡會由 JS 動態填充 -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 底部免責聲明與操作 -->
+                    <div class="mt-6 pt-4 border-t border-slate-100 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400">
+                        <span>💡 以上診斷基於中華民國現行《兵役法》及《役男出境處理辦法》研判。</span>
+                        <button onclick="window.print()" class="text-indigo-600 hover:text-indigo-700 font-semibold flex items-center gap-1.5 cursor-pointer">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"></path></svg>
+                            列印此診斷報告
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 區塊三：關鍵時序與申辦指南 -->
+        <div id="tab-roadmap" class="tab-content hidden space-y-8">
+            <div class="flex flex-col space-y-1">
+                <h2 class="text-xl font-bold text-slate-900 flex items-center gap-2">
+                    <svg class="w-5 h-5 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"></path></svg>
+                    兵役合規黃金時序與申辦攻略
+                </h2>
+                <p class="text-xs text-slate-400">從 TAS/TES 國際學校到成功獲得海外僑民簽證的標準路徑。</p>
+            </div>
+
+            <!-- 時間軸視覺化 -->
+            <div class="bg-white border border-slate-100 rounded-3xl p-6 sm:p-8 shadow-sm space-y-8">
+                <div class="relative border-l-2 border-indigo-100 ml-4 pl-6 sm:pl-8 space-y-8">
+                    
+                    <!-- 節點 1 -->
+                    <div class="relative">
+                        <div class="absolute -left-[35px] sm:-left-[43px] top-1.5 w-6 h-6 rounded-full bg-indigo-600 border-4 border-white shadow flex items-center justify-center">
+                            <span class="text-[9px] text-white">1</span>
+                        </div>
+                        <div class="space-y-2">
+                            <div class="flex flex-wrap items-center gap-2">
+                                <h3 class="font-bold text-slate-900 text-sm sm:text-base">第一階段：15歲當年底前 —— 扭轉在台生活重心</h3>
+                                <span class="text-[10px] font-bold text-indigo-600 bg-indigo-50 px-2 py-0.5 rounded">黃金生死線</span>
+                            </div>
+                            <p class="text-xs text-slate-500 leading-relaxed">
+                                <strong>行動要點：</strong>孩子必須在滿 15 歲當年之 12 月 31 日前出國就學（通常為相當於美制九年級上學期結束前）。在此之前出國，不需經役審單位同意，能完全避開「接近役齡男子」的出境審查。
+                            </p>
+                            <div class="bg-rose-50 p-3 rounded-xl border border-rose-100 text-[11px] text-rose-800 leading-relaxed">
+                                ⚠️ <strong>決策警告：</strong>如果繼續留在 TAS、TES 等國內外僑學校就讀，在法律上即被判定「生活重心完全在台灣」，一旦越過 12 月 31 日，隔年 1 月 1 日起將因進入「接近役齡」而被限制出境，出國求學的難度與管制將大幅增高。
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 節點 2 -->
+                    <div class="relative">
+                        <div class="absolute -left-[35px] sm:-left-[43px] top-1.5 w-6 h-6 rounded-full bg-slate-200 border-4 border-white shadow flex items-center justify-center">
+                            <span class="text-[9px] text-slate-600">2</span>
+                        </div>
+                        <div class="space-y-2">
+                            <div class="flex flex-wrap items-center gap-2">
+                                <h3 class="font-bold text-slate-900 text-sm sm:text-base">第二階段：16～18歲 —— 建立並累積實質海外居住事實</h3>
+                                <span class="text-[10px] font-bold text-slate-500 bg-slate-100 px-2 py-0.5 rounded">海外扎根期</span>
+                            </div>
+                            <p class="text-xs text-slate-500 leading-relaxed">
+                                <strong>行動要點：</strong>在國外求學（高中階段），必須在海外累積符合「僑民」定義的居住事實。
+                            </p>
+                            <div class="bg-slate-50 p-3 rounded-xl border border-slate-100 text-[11px] text-slate-600 space-y-1">
+                                <div class="font-bold text-slate-700">僑民身份居住認定硬性標準：</div>
+                                <ul class="list-disc pl-4 space-y-1 text-slate-500">
+                                    <li>取得外國居留權（如綠卡或外國護照公民權）。</li>
+                                    <li>在國外累計居住滿 4 年。</li>
+                                    <li>在國外每年居住不少於 183 天，或最近兩年每年在國外居住不少於 270 天。</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 節點 3 -->
+                    <div class="relative">
+                        <div class="absolute -left-[35px] sm:-left-[43px] top-1.5 w-6 h-6 rounded-full bg-emerald-600 border-4 border-white shadow flex items-center justify-center">
+                            <span class="text-[9px] text-white">3</span>
+                        </div>
+                        <div class="space-y-2">
+                            <div class="flex flex-wrap items-center gap-2">
+                                <h3 class="font-bold text-slate-900 text-sm sm:text-base">第三階段：18歲年底前（或第一次回台前） —— 辦理「僑居身分加簽」</h3>
+                                <span class="text-[10px] font-bold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded">法律身分確立</span>
+                            </div>
+                            <p class="text-xs text-slate-500 leading-relaxed">
+                                <strong>行動要點：</strong>符合條件後，必須在孩子滿 18 歲當年的 12 月 31 日前（或 19 歲起第一次返台前）完成「僑居加簽」手續。
+                            </p>
+                            <div class="bg-emerald-50/50 p-3 rounded-xl border border-emerald-100/50 text-[11px] text-emerald-700/90 leading-relaxed space-y-1">
+                                <p>🎯 <strong>成功加簽後：</strong> 孩子在國內將升級為「僑民役男」，適用天數管控與暫緩徵集。19 歲起回台，僅需遵守「年度累積不滿 183 天且跨年連續不滿 183 天」之規定。</p>
+                                <p class="text-slate-500">💡 <strong>辦理地點：</strong>可於海外向中華民國駐外館處申請；若人在台灣，可先向僑委會取得核准函，再至外交部領事事務局辦理加簽。</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- 常見問題 Q&A -->
+            <div class="space-y-4">
+                <h3 class="font-bold text-slate-900 text-lg">家長常見高頻問答 (FAQ)</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="bg-white p-5 rounded-2xl border border-slate-100 space-y-2">
+                        <h4 class="font-bold text-xs text-indigo-600 uppercase">Q1: 如果已經超過 15 歲，目前高一了才想出國怎麼辦？</h4>
+                        <p class="text-xs text-slate-500 leading-relaxed">
+                            16 歲以上（接近役齡）若未出國，出境管制極嚴。若要出國就學，必須檢附<strong>「國外高級中等以上學校入學許可」</strong>，且有年齡限制（高中生出國就學不得超過 19 歲），且不符合在台設籍役男的一般出境事由。建議儘速向役政單位與專業顧問確認個案。
+                        </p>
+                    </div>
+                    <div class="bg-white p-5 rounded-2xl border border-slate-100 space-y-2">
+                        <h4 class="font-bold text-xs text-indigo-600 uppercase">Q2: 聽說「除籍」就不用當兵了，這是真的嗎？</h4>
+                        <p class="text-xs text-slate-500 leading-relaxed">
+                            <strong>這是極具毀滅性的謠言！</strong> 所謂「除籍」僅是戶政機關因當事人出境超過兩年，依法辦理的「遷出登記」（非喪失國籍）。一旦孩子持護照入境台灣，戶政事務所會立刻將其戶籍恢復，兵役義務完全不受影響。
+                        </p>
+                    </div>
+                    <div class="bg-white p-5 rounded-2xl border border-slate-100 space-y-2">
+                        <h4 class="font-bold text-xs text-indigo-600 uppercase">Q3: 孩子可以用美國護照進台灣避開兵役嗎？</h4>
+                        <p class="text-xs text-slate-500 leading-relaxed">
+                            不行。雙重國籍在台灣法規中，只要有設過戶籍，即被視為中華民國公民。役政署與移民署系統已進行資料串接，凡在台設籍男子，即使持外國護照入境，其出入境紀錄與身分證字號完全連動，一旦達到服役天數或違反管制，一樣會被限制出境。
+                        </p>
+                    </div>
+                    <div class="bg-white p-5 rounded-2xl border border-slate-100 space-y-2">
+                        <h4 class="font-bold text-xs text-indigo-600 uppercase">Q4: 僑民身分加簽在台灣國內可以辦理嗎？</h4>
+                        <p class="text-xs text-slate-500 leading-relaxed">
+                            <strong>可以，不一定必須在國外辦理！</strong> 申辦地點取決於您目前所在的地區：<br>
+                            1. <strong>人在國內</strong>：請先向<strong>僑務委員會</strong>臨櫃申請，取得「僑居身分認定核准公函」後，再持核准函向<strong>外交部領事事務局</strong>辦理護照加簽。<br>
+                            2. <strong>人在國外</strong>：請備妥相關文件，向您所在地鄰近的<strong>中華民國駐外館處</strong>直接申請。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 區塊四：僑居身分加簽資格與申辦完整指南 -->
+        <div id="tab-qualifications" class="tab-content hidden space-y-8">
+            
+            <!-- 分頁導言 -->
+            <div class="flex flex-col space-y-1">
+                <h2 class="text-xl font-bold text-slate-900 flex items-center gap-2">
+                    <svg class="w-5 h-5 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+                    中華民國護照「僑居身分加簽」核心資格及申辦指南
+                </h2>
+                <p class="text-xs text-slate-400">依據外交部領事事務局、僑務委員會與內政部最新法規，協助雙重國籍家庭完美規劃。</p>
+            </div>
+
+            <!-- 四大核心資格圖卡 -->
+            <div class="bg-white border border-slate-100 rounded-3xl p-6 sm:p-8 shadow-sm space-y-6">
+                <h3 class="text-sm font-bold text-slate-900 border-b border-slate-100 pb-3 flex items-center gap-2">
+                    <span class="w-2.5 h-2.5 rounded-full bg-indigo-500"></span>
+                    四大法規核心資格 (四大條件缺一不可)
+                </h3>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <!-- 條件1 -->
+                    <div class="p-5 bg-slate-50/70 border border-slate-100 rounded-2xl flex items-start gap-3.5">
+                        <div class="p-2.5 bg-indigo-50 text-indigo-600 rounded-xl font-bold text-sm leading-none shrink-0">1</div>
+                        <div class="space-y-1">
+                            <h4 class="font-bold text-slate-900 text-sm">取得外國居留權</h4>
+                            <p class="text-xs text-slate-500 leading-relaxed">
+                                必須取得僑居國之<strong>永久居留權 (如美國綠卡)</strong>、或擁有<strong>公民身分 (取得該國護照)</strong>。
+                            </p>
+                        </div>
+                    </div>
+                    <!-- 條件2 -->
+                    <div class="p-5 bg-slate-50/70 border border-slate-100 rounded-2xl flex items-start gap-3.5">
+                        <div class="p-2.5 bg-indigo-50 text-indigo-600 rounded-xl font-bold text-sm leading-none shrink-0">2</div>
+                        <div class="space-y-1">
+                            <h4 class="font-bold text-slate-900 text-sm">居住時間累積滿 4 年</h4>
+                            <p class="text-xs text-slate-500 leading-relaxed">
+                                在國外<strong>累計居住滿 4 年</strong>（部分國家為取得該國居留資格連續滿 4 年，且該居留資格能繼續延長居留）。
+                            </p>
+                        </div>
+                    </div>
+                    <!-- 條件3 -->
+                    <div class="p-5 bg-slate-50/70 border border-slate-100 rounded-2xl flex items-start gap-3.5">
+                        <div class="p-2.5 bg-indigo-50 text-indigo-600 rounded-xl font-bold text-sm leading-none shrink-0">3</div>
+                        <div class="space-y-1">
+                            <h4 class="font-bold text-slate-900 text-sm">近期居住事實要求（二擇一）</h4>
+                            <div class="text-xs text-slate-500 space-y-1 mt-1 leading-relaxed">
+                                <p class="flex items-start gap-1"><span class="text-emerald-500">▪</span> <span>在僑居地<strong>連續住滿 6 個月</strong>。</span></p>
+                                <p class="flex items-start gap-1"><span class="text-emerald-500">▪</span> <span>最近 <strong>2 年每年</strong>在僑居地累計居住 <strong>8 個月以上</strong>。</span></p>
+                                <p class="text-[10px] text-amber-600 bg-amber-50 p-1.5 rounded mt-1">※ 若居住於<strong>無永久居留制度地區</strong>，須取得該地居留資格連續 4 年，且<strong>每年在國外累計居住 8 個月以上</strong>。</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 條件4 -->
+                    <div class="p-5 bg-slate-50/70 border border-slate-100 rounded-2xl flex items-start gap-3.5">
+                        <div class="p-2.5 bg-rose-50 text-rose-600 rounded-xl font-bold text-sm leading-none shrink-0">4</div>
+                        <div class="space-y-1">
+                            <h4 class="font-bold text-slate-900 text-sm">役男特別防線（19歲當年起）</h4>
+                            <p class="text-xs text-slate-500 leading-relaxed">
+                                屆役齡男子（19 歲當年 1 月 1 日起）若要申辦，<strong>必須在役齡前取得僑居身分</strong>，或在役齡後<strong>「第一次返台前」</strong>已在海外向駐外館處取得此身分，且符合「每年在國內停留未超過 183 天」之限制。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 互動式：資格自檢沙盒 -->
+            <div class="bg-gradient-to-br from-slate-900 to-indigo-950 text-white rounded-3xl p-6 sm:p-8 shadow-md">
+                <div class="max-w-3xl space-y-6">
+                    <div>
+                        <span class="text-[10px] uppercase tracking-wider text-emerald-400 font-bold bg-emerald-900/40 px-2.5 py-1 rounded-full">互動式自檢</span>
+                        <h3 class="text-xl font-bold text-white mt-2">10秒「僑居加簽資格」自檢沙盒</h3>
+                        <p class="text-xs text-slate-300 mt-1">請勾選孩子目前的狀態，系統將立即判斷是否已具備申辦資格。</p>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 border-t border-slate-800 pt-6">
+                        <!-- 自檢題目 -->
+                        <div class="space-y-4">
+                            <!-- Q1 -->
+                            <div class="space-y-1.5">
+                                <label class="block text-xs font-semibold text-slate-300">Q1. 取得外國永久居留權 (PR/綠卡) 或外國公民身分？</label>
+                                <div class="grid grid-cols-2 gap-2 text-xs">
+                                    <button type="button" onclick="setQCheck(1, 'yes')" id="btn-q1-yes" class="q-btn py-1.5 px-3 rounded-lg border border-slate-700 bg-slate-800 text-slate-300 hover:border-emerald-500 transition-all text-center">是 (有PR/外國籍)</button>
+                                    <button type="button" onclick="setQCheck(1, 'no')" id="btn-q1-no" class="q-btn py-1.5 px-3 rounded-lg border border-slate-700 bg-slate-800 text-slate-300 hover:border-emerald-500 transition-all text-center">否 (無/辦理中)</button>
+                                </div>
+                            </div>
+                            <!-- Q2 -->
+                            <div class="space-y-1.5">
+                                <label class="block text-xs font-semibold text-slate-300">Q2. 是否已在國外「累計居住滿 4 年」以上？</label>
+                                <div class="grid grid-cols-2 gap-2 text-xs">
+                                    <button type="button" onclick="setQCheck(2, 'yes')" id="btn-q2-yes" class="q-btn py-1.5 px-3 rounded-lg border border-slate-700 bg-slate-800 text-slate-300 hover:border-emerald-500 transition-all text-center">是 (已滿 4 年)</button>
+                                    <button type="button" onclick="setQCheck(2, 'no')" id="btn-q2-no" class="q-btn py-1.5 px-3 rounded-lg border border-slate-700 bg-slate-800 text-slate-300 hover:border-emerald-500 transition-all text-center">否 (未滿 4 年)</button>
+                                </div>
+                            </div>
+                            <!-- Q3 -->
+                            <div class="space-y-1.5">
+                                <label class="block text-xs font-semibold text-slate-300">Q3. 近期在僑居地的居住事實狀態為？</label>
+                                <select id="q3-select" onchange="runEligibilityCheck()" class="w-full bg-slate-800 border border-slate-700 rounded-lg px-3 py-1.5 text-xs text-slate-200 focus:outline-none focus:ring-1 focus:ring-emerald-500">
+                                    <option value="none">-- 請選擇 --</option>
+                                    <option value="6m">已在僑居地「連續住滿 6 個月」</option>
+                                    <option value="2y8m">最近 2 年「每年在國外累計居住 8 個月以上」</option>
+                                    <option value="no-pr-4y8m">無永居制度地區「取得居留連續4年且每年住滿8個月」</option>
+                                    <option value="not-meet">以上皆不符合（停留時間不夠）</option>
+                                </select>
+                            </div>
+                            <!-- Q4 -->
+                            <div class="space-y-1.5">
+                                <label class="block text-xs font-semibold text-slate-300">Q4. 孩子目前的年齡或役別狀態？</label>
+                                <select id="q4-select" onchange="runEligibilityCheck()" class="w-full bg-slate-800 border border-slate-700 rounded-lg px-3 py-1.5 text-xs text-slate-200 focus:outline-none focus:ring-1 focus:ring-emerald-500">
+                                    <option value="young">18 歲（含）以下（尚未面臨役齡）</option>
+                                    <option value="19-never">19 歲以上，但「從未持台灣護照返台過」</option>
+                                    <option value="19-returned">19 歲以上，且「已經持台灣護照返台過」</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- 判斷結果看板 -->
+                        <div class="bg-slate-800/50 border border-slate-700/50 rounded-2xl p-5 flex flex-col justify-between" id="sandbox-result-box">
+                            <div class="space-y-3">
+                                <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest block">即時試算評估</span>
+                                <div id="sandbox-status-badge" class="inline-block text-[10px] font-bold bg-slate-700 px-2.5 py-0.5 rounded text-slate-300">待完成輸入</div>
+                                <h4 class="text-base font-bold text-white leading-snug" id="sandbox-title">請完成左側四個問題的勾選</h4>
+                                <p class="text-xs text-slate-300 leading-relaxed" id="sandbox-desc">
+                                    系統將自動比對最新外交部與內政部規範，診斷是否符合「僑居身分加簽」資格並給予安全建議。
+                                </p>
+                            </div>
+                            <div class="text-[10px] text-slate-400 border-t border-slate-800 pt-3 mt-4">
+                                ※ 此自檢依據相關主管機關最新核簽基準建置，僅供模擬決策參考。
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 申辦管道雙軌並行 (國內 vs 國外) -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- 管道 A：人在國內 -->
+                <div class="bg-white border border-slate-100 rounded-3xl p-6 sm:p-8 shadow-sm flex flex-col justify-between space-y-6">
+                    <div class="space-y-4">
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs font-bold uppercase tracking-widest text-indigo-600 bg-indigo-50 px-2.5 py-1 rounded-full">國內申辦管道</span>
+                            <span class="text-xs text-slate-400">雙機關共同審查</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-900 leading-tight">人在國內：先經僑委會取得核准函</h3>
+                        <p class="text-xs text-slate-500 leading-relaxed">
+                            若孩子暫時留在台灣，不用特地飛回國外辦理。在國內有完整的對接窗口，但需分兩步驟前往不同機關申辦。
+                        </p>
+                        <div class="border-t border-slate-100 pt-4 space-y-2">
+                            <span class="text-xs font-bold text-slate-700 block">申辦步驟與流程：</span>
+                            <ol class="list-decimal pl-4 text-xs text-slate-500 space-y-1">
+                                <li><strong>步驟一（僑委會）：</strong>備妥完整證明文件，向<strong>僑務委員會綜合規劃處</strong>臨櫃申請，審核通過後取得官方核發之「僑居身分認定核准公函」。</li>
+                                <li><strong>步驟二（領事事務局）：</strong>持該「核准公函」及原護照，前往<strong>外交部領事事務局</strong>（或其各地辦事處）辦理中華民國護照加簽「僑居」戳記。</li>
+                            </ol>
+                        </div>
+                    </div>
+                    <div class="bg-amber-50 text-amber-900 border border-amber-100 p-3.5 rounded-2xl text-xs flex items-start gap-2">
+                        <span>⚠️</span>
+                        <p class="leading-relaxed font-medium"><strong>國內注意：</strong>役男（滿 19 歲起）若人在國內要依此管道補辦，必須在在台天數尚未超線（符合累計未滿 183 天且連續未滿 183 天）之前儘速辦妥。否則一旦在台天數破線，即喪失加簽資格且將立刻受徵兵管制！</p>
+                    </div>
+                </div>
+
+                <!-- 管道 B：人在國外 -->
+                <div class="bg-white border border-slate-100 rounded-3xl p-6 sm:p-8 shadow-sm flex flex-col justify-between space-y-6">
+                    <div class="space-y-4">
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs font-bold uppercase tracking-widest text-indigo-600 bg-indigo-50 px-2.5 py-1 rounded-full">海外申辦管道</span>
+                            <span class="text-xs text-slate-400">最直接、無爭議</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-900 leading-tight">人在國外：向中華民國駐外館處辦理</h3>
+                        <p class="text-xs text-slate-500 leading-relaxed">
+                            這是多數雙重國籍學子最常採用的申辦管道。在國外居住符合時間要求後，備齊文件直接前往當地的駐外使領館、代表處或辦事處完成護照加簽。
+                        </p>
+                        <div class="border-t border-slate-100 pt-4 space-y-2">
+                            <span class="text-xs font-bold text-slate-700 block">申辦步驟與流程：</span>
+                            <ol class="list-decimal pl-4 text-xs text-slate-500 space-y-1">
+                                <li>預約或親臨鄰近之<strong>中華民國駐外館處</strong>。</li>
+                                <li>遞交有效中華民國普通護照正本、僑居地有效居留證明。</li>
+                                <li>由駐外館處臨櫃核對並調閱入出境紀錄（通常需 1-2 工作天內核簽完成）。</li>
+                            </ol>
+                        </div>
+                    </div>
+                    <div class="bg-emerald-50 text-emerald-900 border border-emerald-100 p-3.5 rounded-2xl text-xs flex items-start gap-2">
+                        <span>💡</span>
+                        <p class="leading-relaxed font-medium"><strong>海外優勢：</strong>役男在役齡前或「役齡後第一次返台前」透過海外管道辦妥，可確保踏入台灣國境那一刻即具備完全的僑民緩徵與天數管控保障，避免入境時因無僑民身分直接受管制。</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 應備文件與官方連結 -->
+            <div class="bg-white border border-slate-100 rounded-3xl p-6 sm:p-8 shadow-sm space-y-6">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                    <h3 class="text-sm font-bold text-slate-900 flex items-center gap-2">
+                        <span class="w-2.5 h-2.5 rounded-full bg-indigo-500"></span>
+                        申請應備文件自我檢視清單
+                    </h3>
+                    <span class="text-[10px] text-slate-400">請家長勾選已備妥之項目，進行送件前的最後核對。</span>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <!-- 文件一 -->
+                    <label class="flex items-start gap-3 p-4 bg-slate-50/50 rounded-2xl border border-slate-100 hover:bg-slate-50 transition-all cursor-pointer">
+                        <input type="checkbox" class="mt-1 accent-indigo-600 rounded">
+                        <div class="space-y-0.5">
+                            <span class="text-xs font-bold text-slate-900 block">中華民國普通護照正本</span>
+                            <span class="text-[11px] text-slate-500 block">效期須在 6 個月以上（舊護照若有前次加簽紀錄亦建議一併攜帶）。</span>
+                        </div>
+                    </label>
+                    <!-- 文件二 -->
+                    <label class="flex items-start gap-3 p-4 bg-slate-50/50 rounded-2xl border border-slate-100 hover:bg-slate-50 transition-all cursor-pointer">
+                        <input type="checkbox" class="mt-1 accent-indigo-600 rounded">
+                        <div class="space-y-0.5">
+                            <span class="text-xs font-bold text-slate-900 block">僑居地有效居留證明</span>
+                            <span class="text-[11px] text-slate-500 block">如外國永久居留證（綠卡）、外國護照（公民身分證明）等正影本。</span>
+                        </div>
+                    </label>
+                    <!-- 文件三 -->
+                    <label class="flex items-start gap-3 p-4 bg-slate-50/50 rounded-2xl border border-slate-100 hover:bg-slate-50 transition-all cursor-pointer">
+                        <input type="checkbox" class="mt-1 accent-indigo-600 rounded">
+                        <div class="space-y-0.5">
+                            <span class="text-xs font-bold text-slate-900 block">中華民國護照加簽申請書</span>
+                            <span class="text-[11px] text-slate-500 block">可於現場填寫，或事先下載並由家長/法定代理人簽名（未成年人申辦）。</span>
+                        </div>
+                    </label>
+                    <!-- 文件四 -->
+                    <label class="flex items-start gap-3 p-4 bg-slate-50/50 rounded-2xl border border-slate-100 hover:bg-slate-50 transition-all cursor-pointer">
+                        <input type="checkbox" class="mt-1 accent-indigo-600 rounded">
+                        <div class="space-y-0.5">
+                            <span class="text-xs font-bold text-slate-900 block">內政部移民署入出國日期證明書</span>
+                            <span class="text-[11px] text-slate-500 block">至關重要！用以佐證國外累計居住 4 年及近期居住事實。人在國內可持身分證向移民署各地服務站申請，駐外申辦時部分外館可代為查調。</span>
+                        </div>
+                    </label>
+                </div>
+            </div>
+
+            <!-- 官方直達連結與出處 -->
+            <div class="space-y-4">
+                <h3 class="font-bold text-slate-900 text-sm">官方權威資源與法規出處直達</h3>
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                    <a href="https://www.ocac.gov.tw/OCAC/FAQ/List.aspx?nodeid=384" target="_blank" rel="noopener noreferrer" 
+                        class="bg-white p-4 rounded-2xl border border-slate-100 hover:border-indigo-500 transition-all block space-y-2 shadow-sm text-left group">
+                        <div class="flex items-center justify-between">
+                            <span class="text-[10px] font-bold text-indigo-600 uppercase">僑務委員會 (OCAC)</span>
+                            <span class="text-xs text-slate-400 group-hover:text-indigo-600 transition-all">→</span>
+                        </div>
+                        <h4 class="font-bold text-xs text-slate-800">僑民身分認定 FAQ 常見問答</h4>
+                        <p class="text-[10px] text-slate-500 leading-normal">官方解答有關僑居資格認定與最新兵役天數關聯之解釋令。</p>
+                    </a>
+
+                    <a href="https://www.roc-taiwan.org/uslax/post/13810.html" target="_blank" rel="noopener noreferrer" 
+                        class="bg-white p-4 rounded-2xl border border-slate-100 hover:border-indigo-500 transition-all block space-y-2 shadow-sm text-left group">
+                        <div class="flex items-center justify-between">
+                            <span class="text-[10px] font-bold text-emerald-600 uppercase">駐洛杉磯台北代表處</span>
+                            <span class="text-xs text-slate-400 group-hover:text-emerald-600 transition-all">→</span>
+                        </div>
+                        <h4 class="font-bold text-xs text-slate-800">駐外館處僑居加簽辦理指南</h4>
+                        <p class="text-[10px] text-slate-500 leading-normal">提供國外直辦的標準作業範本、應攜帶文件與入出境天數證明說明。</p>
+                    </a>
+
+                    <a href="https://www.boca.gov.tw/cp-31-25-2c4c1-1.html" target="_blank" rel="noopener noreferrer" 
+                        class="bg-white p-4 rounded-2xl border border-slate-100 hover:border-indigo-500 transition-all block space-y-2 shadow-sm text-left group">
+                        <div class="flex items-center justify-between">
+                            <span class="text-[10px] font-bold text-rose-600 uppercase">外交部領事事務局</span>
+                            <span class="text-xs text-slate-400 group-hover:text-rose-600 transition-all">→</span>
+                        </div>
+                        <h4 class="font-bold text-xs text-slate-800">護照加簽僑居身分說明</h4>
+                        <p class="text-[10px] text-slate-500 leading-normal">國內臨櫃辦理加簽戳記之作業流程、書表下載與領務規費明細。</p>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- 交互邏輯 JavaScript -->
+    <script>
+        // 全域狀態儲存（自檢沙盒使用）
+        const sandboxState = {
+            q1: null, // 'yes' | 'no'
+            q2: null, // 'yes' | 'no'
+        };
+
+        // 初始化
+        window.onload = function() {
+            initSlider();
+            setCurrentDate();
+            calculateRisk();
+            runEligibilityCheck(); // 初始化自檢沙盒狀態
+        };
+
+        // 1. 在台天數滑桿邏輯
+        function initSlider() {
+            const slider = document.getElementById('days-slider');
+            const display = document.getElementById('days-display');
+            
+            slider.addEventListener('input', function() {
+                const days = parseInt(this.value);
+                display.innerText = days + ' 天';
+                updateRiskCard(days);
+            });
+            
+            // 初始執行一次
+            updateRiskCard(parseInt(slider.value));
+        }
+
+        // 更新天數風險卡片狀態（完全基於183天條款）
+        function updateRiskCard(days) {
+            const card = document.getElementById('risk-card');
+            const badge = document.getElementById('risk-badge');
+            const status = document.getElementById('risk-status');
+            const desc = document.getElementById('risk-desc');
+            const bullets = document.getElementById('risk-bullets');
+
+            if (days < 120) {
+                // 安全綠燈
+                card.className = "rounded-3xl p-6 sm:p-8 flex flex-col justify-between transition-all duration-300 bg-emerald-50 border border-emerald-100 text-emerald-900";
+                badge.className = "text-xs font-bold uppercase tracking-wider block text-emerald-700 bg-emerald-100 px-2.5 py-1 rounded-full";
+                badge.innerText = "安全綠燈";
+                status.innerText = "極度安全";
+                status.className = "text-2xl font-bold text-emerald-800";
+                desc.innerText = "在台停留時間控制在 120 天以內。不論是年度累積還是連續留台天數，都與 183 天徵兵線有極大的安全緩衝空間。";
+                bullets.innerHTML = `
+                    <li class="flex items-start gap-1.5">
+                        <span class="text-emerald-500">✔</span>
+                        <span>無任何強制服役風險</span>
+                    </li>
+                    <li class="flex items-start gap-1.5">
+                        <span class="text-emerald-500">✔</span>
+                        <span>可持中華民國護照自由出入境</span>
+                    </li>
+                    <li class="flex items-start gap-1.5">
+                        <span class="text-emerald-500">✔</span>
+                        <span>寒暑假短期探親、旅遊極度推薦</span>
+                    </li>
+                `;
+            } else if (days >= 120 && days <= 182) {
+                // 黃燈警戒
+                card.className = "rounded-3xl p-6 sm:p-8 flex flex-col justify-between transition-all duration-300 bg-amber-50 border border-amber-100 text-amber-900";
+                badge.className = "text-xs font-bold uppercase tracking-wider block text-amber-700 bg-amber-100 px-2.5 py-1 rounded-full";
+                badge.innerText = "黃燈警戒";
+                status.innerText = "黃燈警戒區";
+                status.className = "text-2xl font-bold text-amber-800";
+                desc.innerText = "在台停留天數已累積達 120 天至 182 天。雖然尚未達到 183 天法定徵集線，打過預防針但已非常接近！必須特別留意不能有【跨年度連續留台超過 182 天】之情形。";
+                bullets.innerHTML = `
+                    <li class="flex items-start gap-1.5">
+                        <span class="text-amber-500">⚠</span>
+                        <span>需精密算計該年度剩餘留台天數</span>
+                    </li>
+                    <li class="flex items-start gap-1.5">
+                        <span class="text-amber-500">⚠</span>
+                        <span>注意避免跨年停留（連續留台天數觸線）</span>
+                    </li>
+                    <li class="flex items-start gap-1.5">
+                        <span class="text-amber-500">⚠</span>
+                        <span>建議避免在台進行實習或長期實體居住</span>
+                    </li>
+                `;
+            } else {
+                // 紅燈危險
+                card.className = "rounded-3xl p-6 sm:p-8 flex flex-col justify-between transition-all duration-300 bg-rose-50 border border-rose-100 text-rose-900";
+                badge.className = "text-xs font-bold uppercase tracking-wider block text-rose-700 bg-rose-100 px-2.5 py-1 rounded-full";
+                badge.innerText = "紅燈危險";
+                status.innerText = "觸發徵兵限制";
+                status.className = "text-2xl font-bold text-rose-800";
+                desc.innerText = "在台天數已達 183 天或以上！這意味著孩子已觸犯『單一曆年累計滿 183 天』或『連續留台滿 183 天』的兵役限制。僑民緩徵身分將被判定失效，限制出境！";
+                bullets.innerHTML = `
+                    <li class="flex items-start gap-1.5">
+                        <span class="text-rose-500">✘</span>
+                        <span>依法將面臨強制徵兵服役</span>
+                    </li>
+                    <li class="flex items-start gap-1.5">
+                        <span class="text-rose-500">✘</span>
+                        <span>出境時將被海關當場攔截、限制出境</span>
+                    </li>
+                    <li class="flex items-start gap-1.5">
+                        <span class="text-rose-500">✘</span>
+                        <span>外國護照此時亦無法發揮避險效果</span>
+                    </li>
+                `;
+            }
+        }
+
+        // 2. 分頁切換邏輯
+        function switchTab(tabId) {
+            // 隱藏所有分頁
+            const contents = document.querySelectorAll('.tab-content');
+            contents.forEach(content => content.classList.add('hidden'));
+            
+            // 顯示指定分頁
+            document.getElementById('tab-' + tabId).classList.remove('hidden');
+            
+            // 更新按鈕樣式
+            const buttons = document.querySelectorAll('.tab-btn');
+            buttons.forEach(btn => {
+                btn.classList.remove('border-indigo-600', 'text-indigo-600');
+                btn.classList.add('border-transparent', 'text-slate-500');
+            });
+            
+            const activeBtn = document.getElementById('btn-tab-' + tabId);
+            activeBtn.classList.remove('border-transparent', 'text-slate-500');
+            activeBtn.classList.add('border-indigo-600', 'text-indigo-600');
+        }
+
+        // 3. 診斷器邏輯
+        let hasForeignPassport = true; // 預設已取得
+
+        function setSelect(type, val) {
+            if (type === 'has-foreign') {
+                hasForeignPassport = val;
+                const btnYes = document.getElementById('btn-foreign-yes');
+                const btnNo = document.getElementById('btn-foreign-no');
+                
+                if (val) {
+                    btnYes.className = "foreign-btn py-2 px-3 text-sm font-medium rounded-xl border border-indigo-600 bg-indigo-50 text-indigo-700 transition-all cursor-pointer text-center";
+                    btnNo.className = "foreign-btn py-2 px-3 text-sm font-medium rounded-xl border border-slate-200 bg-white text-slate-600 transition-all cursor-pointer text-center";
+                } else {
+                    btnYes.className = "foreign-btn py-2 px-3 text-sm font-medium rounded-xl border border-slate-200 bg-white text-slate-600 transition-all cursor-pointer text-center";
+                    btnNo.className = "foreign-btn py-2 px-3 text-sm font-medium rounded-xl border border-indigo-600 bg-indigo-50 text-indigo-700 transition-all cursor-pointer text-center";
+                }
+            }
+            calculateRisk();
+        }
+
+        function setCurrentDate() {
+            const today = new Date();
+            const dateStr = today.getFullYear() + '年 ' + (today.getMonth() + 1) + '月 ' + today.getDate() + '日 產出';
+            document.getElementById('report-date').innerText = dateStr;
+        }
+
+        // 核心風險分析計算器
+        function calculateRisk() {
+            const birthYear = parseInt(document.getElementById('birth-year').value);
+            const leaveTimeline = document.getElementById('leave-timeline').value;
+            const hujiRadio = document.querySelector('input[name="huji"]:checked').value;
+
+            // 計算重要年齡節點 (西元 2012 + 15 = 2027)
+            const year15 = birthYear + 15; // 15歲當年底
+            const year16 = birthYear + 16; // 進入接近役齡
+            const year19 = birthYear + 19; // 進入正式役齡
+
+            document.getElementById('node-15').innerText = year15 + '年 12月 31日';
+            document.getElementById('node-16').innerText = year16 + '年 起';
+            document.getElementById('node-19').innerText = year19 + '年 起';
+
+            const diagBanner = document.getElementById('diag-banner');
+            const diagRiskLevel = document.getElementById('diag-risk-level');
+            const diagTitle = document.getElementById('diag-title');
+            const diagSummary = document.getElementById('diag-summary');
+            const diagAdvice = document.getElementById('diag-advice');
+
+            // 判斷戶籍影響
+            if (hujiRadio === 'no') {
+                // 從未設籍情況（無戶籍國民）
+                diagBanner.className = "flex items-start gap-4 p-4 rounded-2xl bg-emerald-50 border border-emerald-100";
+                diagRiskLevel.className = "p-3 bg-emerald-500 text-white rounded-xl font-bold text-lg text-center min-w-[60px]";
+                diagRiskLevel.innerText = "安全";
+                diagTitle.innerText = "極低風險：無戶籍國民狀態";
+                diagSummary.innerText = "由於孩子「從未在台灣設有戶籍」，在兵役法上屬於「無戶籍國民」。此身分在台灣居住未滿特定期間前，不具備服兵役義務，出入境管制極為寬鬆。";
+                diagAdvice.innerHTML = `
+                    <div class="p-3 bg-slate-50 rounded-xl border border-slate-100 flex items-start gap-2">
+                        <span class="text-indigo-600 font-bold">1.</span>
+                        <p class="text-slate-600"><strong>極大優勢：</strong>因為從未設籍，孩子回台探親、就學（持臨人字入國許可證或外國護照）均不直接計入兵役役男徵集。但在台設立戶籍（如辦理身分證）前，請不要輕易向戶政事務所申辦初設戶籍登記。</p>
+                    </div>
+                    <div class="p-3 bg-slate-50 rounded-xl border border-slate-100 flex items-start gap-2">
+                        <span class="text-indigo-600 font-bold">2.</span>
+                        <p class="text-slate-600">如果未來有返台設籍、辦理身分證的需求，強烈建議在<strong>正式退役年齡（36歲）之後</strong>再行辦理初設戶籍登記，以完整規避兵役風險。</p>
+                    </div>
+                `;
+                return;
+            }
+
+            // 已設籍（有身分證字號）
+            if (leaveTimeline === 'before-15') {
+                // 路線 A：黃金路徑，15歲年底前出國
+                diagBanner.className = "flex items-start gap-4 p-4 rounded-2xl bg-emerald-50 border border-emerald-100";
+                diagRiskLevel.className = "p-3 bg-emerald-500 text-white rounded-xl font-bold text-lg text-center min-w-[60px]";
+                diagRiskLevel.innerText = "安全";
+                diagTitle.innerText = "規劃完美：符合黃金海外建立居住事實路徑";
+                diagSummary.innerText = "孩子計劃在 15 歲當年底（西元 " + year15 + " 年 12 月 31 日）之前出國，能完美扭轉「以台灣為生活重心」的情況，是雙重國籍兵役避險的最安全典範！";
+                
+                let warningText = "";
+                if (!hasForeignPassport) {
+                    warningText = "<br><span class='text-rose-500 font-bold'>⚠️ 警示：孩子目前尚未取得外國護照，必須在 18 歲年底前取得外國居留權（如綠卡或公民權），並於國內（向僑委會取得核准函後至外交部領事事務局）或海外駐外館處完成「僑居身分加簽」，否則 19 歲起回台依然受役男管制！請加快外國籍申辦。</span>";
+                }
+
+                diagAdvice.innerHTML = `
+                    <div class="p-3 bg-slate-50 rounded-xl border border-slate-100 flex items-start gap-2">
+                        <span class="text-indigo-600 font-bold">1.</span>
+                        <p class="text-slate-600"><strong>出境無阻礙：</strong>在西元 <strong>\${year15} 年 12 月 31 日前</strong> 出國，出境時完全不受任何兵役法規管制。請直接正常出境前往海外就讀。\${warningText}</p>
+                    </div>
+                    <div class="p-3 bg-slate-50 rounded-xl border border-slate-100 flex items-start gap-2">
+                        <span class="text-indigo-600 font-bold">2.</span>
+                        <p class="text-slate-600"><strong>累積海外天數與申辦：</strong>在國外就學期間，請確保孩子<strong>在國外累計居住滿 4 年</strong>，且每年在國外居住滿 183 天。並在西元 <strong>\${birthYear + 18} 年 12 月 31 日前</strong>（滿18歲當年年底）前，持台灣護照在國內（經僑委會及領事事務局）或在海外駐外辦事處申請「僑居加簽」。</p>
+                    </div>
+                `;
+            } 
+            else if (leaveTimeline === 'between-16-18') {
+                // 路線 B：中高風險，16-18歲間出國
+                diagBanner.className = "flex items-start gap-4 p-4 rounded-2xl bg-amber-50 border border-amber-100";
+                diagRiskLevel.className = "p-3 bg-amber-500 text-white rounded-xl font-bold text-lg text-center min-w-[60px]";
+                diagRiskLevel.innerText = "警告";
+                diagTitle.innerText = "中高風險：面臨接近役齡出境審查";
+                diagSummary.innerText = "孩子計畫在 16-18 歲之間出國。此時出境限制極嚴，無法直接以一般理由出國，必須透過特殊的「留學審查」流程方可放行。";
+                
+                diagAdvice.innerHTML = `
+                    <div class="p-3 bg-slate-50 rounded-xl border border-slate-100 flex items-start gap-2">
+                        <span class="text-indigo-600 font-bold">1.</span>
+                        <p class="text-slate-600"><strong>留學出境審查限制：</strong>16 歲以上役男出國留學，必須符合《役男出境處理辦法》，檢附<strong>國外學校正式入學許可登記</strong>。且出國就學有「年齡上限限制」（例如在國外就讀中等學校不得超過 19 歲）。</p>
+                    </div>
+                    <div class="p-3 bg-slate-50 rounded-xl border border-slate-100 flex items-start gap-2">
+                        <span class="text-indigo-600 font-bold">2.</span>
+                        <p class="text-slate-600"><strong>僑居身分加簽阻礙：</strong>因為較晚出國，必須確保在滿 18 歲年底前能「累積海外居住滿 4 年」的硬性法規。若出國時間太晚，可能導致 18 歲年底時海外居住年資不足 4 年，無法順利辦理加簽，導致 19 歲起一回台灣就面臨服役危險！</p>
+                    </div>
+                `;
+            }
+            else if (leaveTimeline === 'stay-taiwan') {
+                // 路線 C：長期就讀國際學校（不打算出國）
+                diagBanner.className = "flex items-start gap-4 p-4 rounded-2xl bg-rose-50 border border-rose-100";
+                diagRiskLevel.className = "p-3 bg-rose-500 text-white rounded-xl font-bold text-lg text-center min-w-[60px]";
+                diagRiskLevel.innerText = "高危";
+                diagTitle.innerText = "高危警告：長期留台就學，生活重心重合";
+                diagSummary.innerText = "若孩子長期就讀 TAS、TES 等在台國際學校，不打算在 15 歲年底前出國建立居住事實，將無法擺脫「生活重心在台」的認定，兵役義務將不可避免。";
+
+                diagAdvice.innerHTML = `
+                    <div class="p-3 bg-slate-50 rounded-xl border border-slate-100 flex items-start gap-2">
+                        <span class="text-rose-600 font-bold">1.</span>
+                        <p class="text-slate-600"><strong>無法取得僑民加簽：</strong>若孩子長期留台就學，因完全沒有「海外居住滿 4 年」之事實，不論持哪國護照，在法律上皆屬於一般在台設籍役男，19 歲起回台或長住隨時面臨強制徵兵服役。</p>
+                    </div>
+                    <div class="p-3 bg-slate-50 rounded-xl border border-slate-100 flex items-start gap-2">
+                        <span class="text-rose-600 font-bold">2.</span>
+                        <p class="text-slate-600"><strong>建議方案：</strong>強烈建議及早規劃於 <strong>西元 \${year15} 年 12 月 31 日前</strong> 轉往海外就學，以建立合法的海外居住事實，避免往後在接近役齡或役齡期失去身分彈性。</p>
+                    </div>
+                `;
+            }
+            else {
+                // 路線 D：19歲之後才計劃出國
+                diagBanner.className = "flex items-start gap-4 p-4 rounded-2xl bg-rose-50 border border-rose-100";
+                diagRiskLevel.className = "p-3 bg-rose-500 text-white rounded-xl font-bold text-lg text-center min-w-[60px]";
+                diagRiskLevel.innerText = "危險";
+                diagTitle.innerText = "極高風險：兵役義務不可避免";
+                diagSummary.innerText = "計劃在 19 歲之後出國。孩子自 19 歲（西元 " + year19 + " 年）起當年 1/1 起成為正式「役齡男子」，若未在海外居住並加簽僑居，回台灣探親或長期留台將有隨時被徵兵、限制出境之最高曝險！";
+
+                diagAdvice.innerHTML = `
+                    <div class="p-3 bg-slate-50 rounded-xl border border-slate-100 flex items-start gap-2">
+                        <span class="text-rose-600 font-bold">1.</span>
+                        <p class="text-slate-600"><strong>失去僑民申辦資格：</strong>一旦孩子年滿 19 歲，若過去未曾於 15 歲前出國或符合 18 歲前累積 4 年居住事實，在法律上將<strong>完全失去「僑民役男」的身分加簽資格</strong>。此時他屬於一般在台役男。</p>
+                    </div>
+                    <div class="p-3 bg-slate-50 rounded-xl border border-slate-100 flex items-start gap-2">
+                        <span class="text-rose-600 font-bold">2.</span>
+                        <p class="text-slate-600"><strong>出境與服役對策：</strong>若欲出國就讀高等教育學校，必須在 19 歲當年年底前，依據國外大學入學許可辦理出境留學。此時，他每年回台灣探親停留時間「最多只能 1 個月」，一旦逾期就會被鎖在台灣入營服役。若要在台生活，則必須依法完成服役（目前為一年義務役或替代役）。</p>
+                    </div>
+                `;
+            }
+        }
+
+        // 4. 自檢沙盒互動按鈕選擇
+        function setQCheck(questionNum, val) {
+            if (questionNum === 1) {
+                sandboxState.q1 = val;
+                const btnYes = document.getElementById('btn-q1-yes');
+                const btnNo = document.getElementById('btn-q1-no');
+                if (val === 'yes') {
+                    btnYes.className = "q-btn py-1.5 px-3 rounded-lg border border-emerald-500 bg-emerald-950/40 text-emerald-300 transition-all text-center cursor-pointer";
+                    btnNo.className = "q-btn py-1.5 px-3 rounded-lg border border-slate-700 bg-slate-800 text-slate-300 hover:border-emerald-500 transition-all text-center cursor-pointer";
+                } else {
+                    btnYes.className = "q-btn py-1.5 px-3 rounded-lg border border-slate-700 bg-slate-800 text-slate-300 hover:border-emerald-500 transition-all text-center cursor-pointer";
+                    btnNo.className = "q-btn py-1.5 px-3 rounded-lg border border-rose-500 bg-rose-950/40 text-rose-300 transition-all text-center cursor-pointer";
+                }
+            } else if (questionNum === 2) {
+                sandboxState.q2 = val;
+                const btnYes = document.getElementById('btn-q2-yes');
+                const btnNo = document.getElementById('btn-q2-no');
+                if (val === 'yes') {
+                    btnYes.className = "q-btn py-1.5 px-3 rounded-lg border border-emerald-500 bg-emerald-950/40 text-emerald-300 transition-all text-center cursor-pointer";
+                    btnNo.className = "q-btn py-1.5 px-3 rounded-lg border border-slate-700 bg-slate-800 text-slate-300 hover:border-emerald-500 transition-all text-center cursor-pointer";
+                } else {
+                    btnYes.className = "q-btn py-1.5 px-3 rounded-lg border border-slate-700 bg-slate-800 text-slate-300 hover:border-emerald-500 transition-all text-center cursor-pointer";
+                    btnNo.className = "q-btn py-1.5 px-3 rounded-lg border border-rose-500 bg-rose-950/40 text-rose-300 transition-all text-center cursor-pointer";
+                }
+            }
+            runEligibilityCheck();
+        }
+
+        // 5. 執行資格自檢沙盒試算
+        function runEligibilityCheck() {
+            const rBox = document.getElementById('sandbox-result-box');
+            const rBadge = document.getElementById('sandbox-status-badge');
+            const rTitle = document.getElementById('sandbox-title');
+            const rDesc = document.getElementById('sandbox-desc');
+
+            const q3Val = document.getElementById('q3-select').value;
+            const q4Val = document.getElementById('q4-select').value;
+
+            // 檢查是否完成必填輸入
+            if (sandboxState.q1 === null || sandboxState.q2 === null || q3Val === 'none') {
+                rBox.className = "bg-slate-800/50 border border-slate-700/50 rounded-2xl p-5 flex flex-col justify-between";
+                rBadge.className = "inline-block text-[10px] font-bold bg-slate-700 px-2.5 py-0.5 rounded text-slate-300 max-w-max";
+                rBadge.innerText = "待完成輸入";
+                rTitle.innerText = "請完成所有問題的勾選與選擇";
+                rDesc.innerText = "請勾選左側：1) 是否有居留權、2) 是否住滿4年、3) 近期居住事實，系統即可即時計算出最終結果。";
+                return;
+            }
+
+            // A. 當孩子沒有居留權/永久居留資格時
+            if (sandboxState.q1 === 'no') {
+                rBox.className = "bg-rose-950/30 border border-rose-900/50 rounded-2xl p-5 flex flex-col justify-between";
+                rBadge.className = "inline-block text-[10px] font-bold bg-rose-900 text-rose-300 px-2.5 py-0.5 rounded max-w-max";
+                rBadge.innerText = "資格不符";
+                rTitle.innerText = "致命紅燈：未持有外國居留權";
+                rDesc.innerText = "「取得外國合法居留權、綠卡、居留身分或外國護照」為僑居加簽的必備硬性條件！即使國外居住時間再長，役政機關仍視同為一般留學生。請務必先設法取得外國居留權利方能申辦。";
+                return;
+            }
+
+            // B. 當在國外累計未滿 4 年
+            if (sandboxState.q2 === 'no') {
+                rBox.className = "bg-amber-950/30 border border-amber-900/50 rounded-2xl p-5 flex flex-col justify-between";
+                rBadge.className = "inline-block text-[10px] font-bold bg-amber-900 text-amber-300 px-2.5 py-0.5 rounded max-w-max";
+                rBadge.innerText = "條件未達標";
+                rTitle.innerText = "年資不足：未在海外累計居住滿 4 年";
+                rDesc.innerText = "法律強制要求必須在國外【累計居住滿 4 年】（取得居留資格後累積）。這通常需要完整的海外高中就學期間。目前不具備加簽資格，需繼續於海外累積就讀天數。";
+                return;
+            }
+
+            // C. 當近期居住時間要求不符
+            if (q3Val === 'not-meet') {
+                rBox.className = "bg-amber-950/30 border border-amber-900/50 rounded-2xl p-5 flex flex-col justify-between";
+                rBadge.className = "inline-block text-[10px] font-bold bg-amber-900 text-amber-300 px-2.5 py-0.5 rounded max-w-max";
+                rBadge.innerText = "居住事實不符";
+                rTitle.innerText = "近期居住條件不符";
+                rDesc.innerText = "雖然您有綠卡且住滿 4 年，但必須滿足【近期居住事實（連續滿 6 個月，或近兩年每年滿 8 個月以上）】方可申請。孩子可能因回台時間過長或往返頻繁而中断。請讓孩子在僑居地連續待滿 6 個月後，再行送件！";
+                return;
+            }
+
+            // D. 當符合基礎條件，再進一步根據年齡役齡判斷
+            if (q4Val === '19-returned') {
+                rBox.className = "bg-rose-950/30 border border-rose-900/50 rounded-2xl p-5 flex flex-col justify-between";
+                rBadge.className = "inline-block text-[10px] font-bold bg-rose-900 text-rose-300 px-2.5 py-0.5 rounded max-w-max";
+                rBadge.innerText = "高危風險";
+                rTitle.innerText = "已屆役齡且已返台：可能失去辦理資格";
+                rDesc.innerText = "依規定，19歲起已是正式役男。若在「第一次回台灣之前」未曾在海外辦妥僑居加簽，且已經持普通護照入境台灣，此時國內與國外主管機關極可能不予受理補辦。孩子入境後即可能因未具備僑民身份而遭役政單位限制出境、面臨服役！請儘速向法規單位或法律顧問確認個案。";
+            } else if (q4Val === '19-never') {
+                rBox.className = "bg-emerald-950/40 border border-emerald-900/50 rounded-2xl p-5 flex flex-col justify-between";
+                rBadge.className = "inline-block text-[10px] font-bold bg-emerald-900 text-emerald-300 px-2.5 py-0.5 rounded max-w-max";
+                rBadge.innerText = "黃金時間";
+                rTitle.innerText = "完全符合：請在「第一次返台前」於海外速辦！";
+                rDesc.innerText = "孩子完全符合各項海外天數條件。雖然已經滿 19 歲，但因為「從未持台灣護照回台過」，請千萬不要直接飛回台灣辦理！請直接備妥文件在【孩子目前所在的海外中華民國駐外館處（駐外代表處）】完成加簽手續後，再行返國！";
+            } else {
+                // young 18歲（含）以下
+                rBox.className = "bg-emerald-950/40 border border-emerald-900/50 rounded-2xl p-5 flex flex-col justify-between";
+                rBadge.className = "inline-block text-[10px] font-bold bg-emerald-900 text-emerald-300 px-2.5 py-0.5 rounded max-w-max";
+                rBadge.innerText = "完全合規";
+                rTitle.innerText = "🎉 完美綠燈：孩子已具備申辦資格！";
+                rDesc.innerText = "太棒了！孩子此時尚未面臨役齡（18歲以下），且居留權與海外年資、居住時間均完全合格。您可以在國外直接向駐外館處申請；或者趁孩子回台時，在國內【先向僑委會取得核准函，再前往外交部領務局】在護照上完成僑居身分加簽。";
+            }
+        }
+    </script>
+</body>
+</html>
